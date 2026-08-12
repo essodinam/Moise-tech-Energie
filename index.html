@@ -1,1518 +1,3311 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Moïse Tech & Énergie</title>
-
-    <!-- ================= CSS ================= -->
-    <style>
-
-        /* ===== COULEURS ===== */
-        :root {
-            --noir: #05090f;
-            --noir2: #0b1420;
-            --bleu: #008cff;
-            --bleu-clair: #00c3ff;
-            --or: #ffc400;
-            --blanc: #ffffff;
-            --gris: #aeb8c4;
-        }
-
-
-        /* ===== RESET ===== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background: var(--noir);
-            color: var(--blanc);
-            line-height: 1.6;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: auto;
-        }
-
-
-        /* ===== HEADER ===== */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            background: rgba(5, 9, 15, 0.95);
-            border-bottom: 1px solid #24303d;
-        }
-
-        .nav {
-            min-height: 75px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-
-        /* ===== LOGO ===== */
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo-icon {
-            width: 42px;
-            height: 42px;
-            background: var(--or);
-            color: var(--noir);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 22px;
-            font-weight: bold;
-        }
-
-        .logo-text strong {
-            display: block;
-            font-size: 18px;
-        }
-
-        .logo-text span {
-            color: var(--or);
-            font-size: 12px;
-            font-weight: bold;
-        }
-
-
-        /* ===== MENU ===== */
-        .menu {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-        }
-
-        .menu a {
-            color: var(--gris);
-            font-size: 14px;
-            transition: 0.3s;
-        }
-
-        .menu a:hover {
-            color: var(--or);
-        }
-
-        .menu-button {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 28px;
-            cursor: pointer;
-        }
-
-
-        /* ===== BOUTONS ===== */
-        .btn {
-            display: inline-block;
-            padding: 14px 22px;
-            background: var(--or);
-            color: var(--noir);
-            border-radius: 5px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            background: white;
-        }
-
-        .btn-blue {
-            background: var(--bleu);
-            color: white;
-        }
-
-        .btn-blue:hover {
-            background: var(--bleu-clair);
-        }
-
-
-        /* ===== HERO ===== */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            background:
-                radial-gradient(
-                    circle at 80% 40%,
-                    rgba(0, 140, 255, 0.25),
-                    transparent 35%
-                ),
-                linear-gradient(120deg, #05090f, #071a2d);
-            padding-top: 75px;
-        }
-
-        .hero-content {
-            max-width: 700px;
-        }
-
-        .small-title {
-            color: var(--or);
-            font-size: 14px;
-            letter-spacing: 2px;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
-        .hero h1 {
-            font-size: clamp(40px, 7vw, 75px);
-            line-height: 1.05;
-            margin-bottom: 25px;
-        }
-
-        .hero h1 span {
-            color: var(--or);
-        }
-
-        .hero p {
-            color: var(--gris);
-            font-size: 18px;
-            max-width: 650px;
-            margin-bottom: 30px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-
-        /* ===== SECTIONS ===== */
-        section {
-            padding: 100px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-title small {
-            color: var(--or);
-            font-weight: bold;
-            letter-spacing: 2px;
-        }
-
-        .section-title h2 {
-            font-size: 42px;
-            margin: 10px 0;
-        }
-
-        .section-title p {
-            color: var(--gris);
-        }
-
-
-        /* ===== SERVICES ===== */
-        #services {
-            background: var(--noir2);
-        }
-
-        .services {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .service {
-            background: #101c29;
-            padding: 30px;
-            border: 1px solid #24303d;
-            border-radius: 10px;
-            transition: 0.3s;
-        }
-
-        .service:hover {
-            transform: translateY(-8px);
-            border-color: var(--or);
-        }
-
-        .service-icon {
-            font-size: 40px;
-            margin-bottom: 20px;
-        }
-
-        .service h3 {
-            margin-bottom: 12px;
-        }
-
-        .service p {
-            color: var(--gris);
-            font-size: 14px;
-        }
-
-
-        /* ===== A PROPOS ===== */
-        .about {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .about-image {
-            min-height: 400px;
-            border: 2px solid var(--or);
-            border-radius: 15px;
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(0, 140, 255, .2),
-                    rgba(255, 196, 0, .08)
-                );
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-
-        .about-image div {
-            font-size: 70px;
-        }
-
-        .about h2 {
-            font-size: 42px;
-            margin: 10px 0 20px;
-        }
-
-        .about p {
-            color: var(--gris);
-            margin-bottom: 15px;
-        }
-
-        .about ul {
-            list-style: none;
-            margin: 25px 0;
-        }
-
-        .about li {
-            margin-bottom: 12px;
-            color: var(--gris);
-        }
-
-        .about li::before {
-            content: "✓";
-            color: var(--or);
-            font-weight: bold;
-            margin-right: 10px;
-        }
-
-
-        /* ===== PROJETS ===== */
-        #projets {
-            background: var(--noir2);
-        }
-
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .project {
-            background: #101c29;
-            border: 1px solid #24303d;
-            border-radius: 10px;
-            overflow: hidden;
-            transition: 0.3s;
-        }
-
-        .project:hover {
-            transform: translateY(-7px);
-            border-color: var(--or);
-        }
-
-        .project-image {
-            height: 180px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #071a2d;
-            font-size: 60px;
-        }
-
-        .project-content {
-            padding: 20px;
-        }
-
-        .project-content p {
-            color: var(--gris);
-            font-size: 14px;
-        }
-
-
-        /* ===== COMPETENCES ===== */
-        .skills {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-        }
-
-        .skill {
-            margin-bottom: 25px;
-        }
-
-        .skill-info {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 8px;
-        }
-
-        .skill-info span {
-            color: var(--gris);
-        }
-
-        .skill-info strong {
-            color: var(--or);
-        }
-
-        .progress {
-            height: 8px;
-            background: #1b2734;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .progress span {
-            display: block;
-            height: 100%;
-            background: linear-gradient(
-                90deg,
-                var(--bleu),
-                var(--or)
-            );
-        }
-
-
-        /* ===== CONTACT ===== */
-        #contact {
-            background: var(--noir2);
-        }
-
-        .contact {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-        }
-
-        .contact h2 {
-            font-size: 42px;
-            margin: 10px 0 20px;
-        }
-
-        .contact-intro {
-            color: var(--gris);
-            margin-bottom: 30px;
-        }
-
-        .contact-item {
-            margin-bottom: 20px;
-        }
-
-        .contact-item strong {
-            color: var(--or);
-            display: block;
-        }
-
-        .contact-item a {
-            color: white;
-        }
-
-        .contact-form {
-            background: #101c29;
-            padding: 30px;
-            border-radius: 10px;
-            border: 1px solid #24303d;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 15px;
-            margin-bottom: 15px;
-            background: #08111d;
-            border: 1px solid #304050;
-            color: white;
-            border-radius: 5px;
-            outline: none;
-        }
-
-        .contact-form textarea {
-            height: 150px;
-            resize: vertical;
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            border-color: var(--or);
-        }
-
-        .contact-form button {
-            width: 100%;
-            border: none;
-            cursor: pointer;
-        }
-
-
-        /* ===== RESEAUX SOCIAUX ===== */
-        .social {
-            display: flex;
-            gap: 12px;
-            margin-top: 30px;
-        }
-
-        .social a {
-            width: 45px;
-            height: 45px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            background: #101c29;
-            border: 1px solid #304050;
-            transition: .3s;
-            font-weight: bold;
-        }
-
-        .social a:hover {
-            background: var(--or);
-            color: black;
-            transform: translateY(-4px);
-        }
-
-
-        /* ===== WHATSAPP ===== */
-        .whatsapp {
-            position: fixed;
-            right: 25px;
-            bottom: 25px;
-            width: 60px;
-            height: 60px;
-            background: #25d366;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-            z-index: 999;
-            box-shadow: 0 5px 20px rgba(0,0,0,.4);
-        }
-
-
-        /* ===== FOOTER ===== */
-        footer {
-            padding: 50px 0 20px;
-            background: #03060a;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 40px;
-        }
-
-        footer p,
-        footer a {
-            color: var(--gris);
-            font-size: 14px;
-        }
-
-        footer h3 {
-            color: var(--or);
-            margin-bottom: 15px;
-        }
-
-        footer a {
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        .copyright {
-            text-align: center;
-            border-top: 1px solid #24303d;
-            margin-top: 40px;
-            padding-top: 20px;
-        }
-
-
-        /* ===== MOBILE ===== */
-        @media (max-width: 800px) {
-
-            .menu-button {
-                display: block;
-            }
-
-            .menu {
-                position: absolute;
-                top: 75px;
-                left: 0;
-                width: 100%;
-                background: #08111d;
-                display: none;
-                flex-direction: column;
-                padding: 25px;
-                align-items: flex-start;
-            }
-
-            .menu.show {
-                display: flex;
-            }
-
-            .services,
-            .projects,
-            .about,
-            .skills,
-            .contact,
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-
-            .section-title h2,
-            .about h2,
-            .contact h2 {
-                font-size: 32px;
-            }
-
-            .hero h1 {
-                font-size: 43px;
-            }
-
-            .about-image {
-                min-height: 300px;
-            }
-        }
-
-    </style>
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Moïse Tech & Énergie | Réseaux, Sécurité, Électricité & Informatique
+    </title>
+
+    <meta name="description"
+          content="Moïse Tech & Énergie propose des solutions professionnelles en réseaux informatiques, vidéosurveillance, sécurité incendie, alarmes, électricité, électronique, domotique, énergie solaire et création de sites web.">
+
+    <meta name="keywords"
+          content="Moïse Tech, réseaux informatiques, vidéosurveillance, sécurité incendie, alarme, électricité, électronique, domotique, énergie solaire, création site web, maintenance informatique, Togo, Lomé">
+
+    <meta name="author"
+          content="LEMON ESSO-DINAM MOÏSE">
+
+    <meta name="robots"
+          content="index, follow">
+
+
+<style>
+
+/* ================================================= */
+/* COULEURS */
+/* ================================================= */
+
+:root {
+
+    --noir: #05090f;
+    --noir2: #0b1420;
+
+    --bleu: #008cff;
+    --bleu-clair: #00c3ff;
+
+    --or: #ffc400;
+
+    --blanc: #ffffff;
+
+    --gris: #aeb8c4;
+
+    --vert: #25d366;
+
+    --card: #101c29;
+
+    --border: #24303d;
+
+}
+
+
+/* ================================================= */
+/* RESET */
+/* ================================================= */
+
+* {
+
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    font-family: Arial, sans-serif;
+
+    background: var(--noir);
+
+    color: var(--blanc);
+
+    line-height: 1.6;
+
+}
+
+
+a {
+
+    text-decoration: none;
+
+    color: inherit;
+
+}
+
+
+img {
+
+    width: 100%;
+
+    display: block;
+
+}
+
+
+.container {
+
+    width: 90%;
+
+    max-width: 1200px;
+
+    margin: auto;
+
+}
+
+
+/* ================================================= */
+/* HEADER */
+/* ================================================= */
+
+header {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    background:
+        rgba(5, 9, 15, .96);
+
+    border-bottom:
+        1px solid var(--border);
+
+    backdrop-filter:
+        blur(10px);
+
+}
+
+
+.nav {
+
+    min-height: 75px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+}
+
+
+/* ================================================= */
+/* LOGO */
+/* ================================================= */
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+.logo-icon {
+
+    width: 42px;
+
+    height: 42px;
+
+    background: var(--or);
+
+    color: var(--noir);
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+}
+
+
+.logo-text strong {
+
+    display: block;
+
+    font-size: 18px;
+
+}
+
+
+.logo-text span {
+
+    color: var(--or);
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+}
+
+
+/* ================================================= */
+/* MENU */
+/* ================================================= */
+
+.menu {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 22px;
+
+}
+
+
+.menu a {
+
+    color: var(--gris);
+
+    font-size: 14px;
+
+    transition: .3s;
+
+}
+
+
+.menu a:hover {
+
+    color: var(--or);
+
+}
+
+
+.menu-button {
+
+    display: none;
+
+    background: none;
+
+    border: none;
+
+    color: white;
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+}
+
+
+/* ================================================= */
+/* BOUTONS */
+/* ================================================= */
+
+.btn {
+
+    display: inline-block;
+
+    padding: 14px 22px;
+
+    background: var(--or);
+
+    color: var(--noir);
+
+    border-radius: 6px;
+
+    font-weight: bold;
+
+    transition: .3s;
+
+    border: none;
+
+    cursor: pointer;
+
+}
+
+
+.btn:hover {
+
+    transform: translateY(-3px);
+
+    background: white;
+
+}
+
+
+.btn-blue {
+
+    background: var(--bleu);
+
+    color: white;
+
+}
+
+
+.btn-blue:hover {
+
+    background: var(--bleu-clair);
+
+}
+
+
+.btn-whatsapp {
+
+    background: var(--vert);
+
+    color: white;
+
+}
+
+
+.btn-whatsapp:hover {
+
+    background: #20b95a;
+
+}
+
+
+/* ================================================= */
+/* HERO */
+/* ================================================= */
+
+.hero {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    padding-top: 75px;
+
+    background:
+
+        radial-gradient(
+
+            circle at 80% 40%,
+
+            rgba(0, 140, 255, .25),
+
+            transparent 35%
+
+        ),
+
+        linear-gradient(
+
+            120deg,
+
+            #05090f,
+
+            #071a2d
+
+        );
+
+}
+
+
+.hero-content {
+
+    max-width: 780px;
+
+}
+
+
+.small-title {
+
+    color: var(--or);
+
+    font-size: 14px;
+
+    letter-spacing: 2px;
+
+    font-weight: bold;
+
+    margin-bottom: 20px;
+
+}
+
+
+.hero h1 {
+
+    font-size:
+
+        clamp(40px, 7vw, 75px);
+
+    line-height: 1.05;
+
+    margin-bottom: 25px;
+
+}
+
+
+.hero h1 span {
+
+    color: var(--or);
+
+}
+
+
+.hero p {
+
+    color: var(--gris);
+
+    font-size: 18px;
+
+    max-width: 700px;
+
+    margin-bottom: 30px;
+
+}
+
+
+.hero-buttons {
+
+    display: flex;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+}
+
+
+/* ================================================= */
+/* SECTIONS */
+/* ================================================= */
+
+section {
+
+    padding: 100px 0;
+
+}
+
+
+.section-title {
+
+    text-align: center;
+
+    margin-bottom: 50px;
+
+}
+
+
+.section-title small {
+
+    color: var(--or);
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+}
+
+
+.section-title h2 {
+
+    font-size: 42px;
+
+    margin: 10px 0;
+
+}
+
+
+.section-title p {
+
+    color: var(--gris);
+
+    max-width: 700px;
+
+    margin: auto;
+
+}
+
+
+/* ================================================= */
+/* À PROPOS */
+/* ================================================= */
+
+.about {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 60px;
+
+    align-items: center;
+
+}
+
+
+/* PHOTO DU FONDATEUR */
+
+.about-photo {
+
+    height: 500px;
+
+    border: 2px solid var(--or);
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    background: #07111d;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.35);
+
+}
+
+
+.about-photo img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center 15%;
+
+}
+
+
+.about h2 {
+
+    font-size: 42px;
+
+    margin: 10px 0 20px;
+
+}
+
+
+.about p {
+
+    color: var(--gris);
+
+    margin-bottom: 15px;
+
+}
+
+
+.about ul {
+
+    list-style: none;
+
+    margin: 25px 0;
+
+}
+
+
+.about li {
+
+    margin-bottom: 12px;
+
+    color: var(--gris);
+
+}
+
+
+.about li::before {
+
+    content: "✓";
+
+    color: var(--or);
+
+    font-weight: bold;
+
+    margin-right: 10px;
+
+}
+
+
+/* ================================================= */
+/* SERVICES */
+/* ================================================= */
+
+#services {
+
+    background: var(--noir2);
+
+}
+
+
+.services {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 25px;
+
+}
+
+
+.service {
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    transition: .3s;
+
+}
+
+
+.service:hover {
+
+    transform: translateY(-8px);
+
+    border-color: var(--or);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.25);
+
+}
+
+
+.service-image {
+
+    height: 220px;
+
+    overflow: hidden;
+
+    background: #071a2d;
+
+}
+
+
+.service-image img {
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: .5s;
+
+}
+
+
+.service:hover .service-image img {
+
+    transform: scale(1.07);
+
+}
+
+
+.service-content {
+
+    padding: 28px;
+
+}
+
+
+.service-icon {
+
+    font-size: 38px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.service h3 {
+
+    font-size: 23px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.service-description {
+
+    color: var(--gris);
+
+    font-size: 15px;
+
+    margin-bottom: 18px;
+
+}
+
+
+.service-list {
+
+    list-style: none;
+
+    margin-bottom: 22px;
+
+}
+
+
+.service-list li {
+
+    color: #d5dce4;
+
+    font-size: 14px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.service-list li::before {
+
+    content: "✓";
+
+    color: var(--or);
+
+    font-weight: bold;
+
+    margin-right: 8px;
+
+}
+
+
+/* ================================================= */
+/* AVANTAGES */
+/* ================================================= */
+
+#avantages {
+
+    background: #07111d;
+
+}
+
+
+.advantages {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+
+}
+
+
+.advantage {
+
+    text-align: center;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    padding: 30px 20px;
+
+    border-radius: 10px;
+
+    transition: .3s;
+
+}
+
+
+.advantage:hover {
+
+    transform: translateY(-6px);
+
+    border-color: var(--or);
+
+}
+
+
+.advantage-icon {
+
+    font-size: 40px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.advantage h3 {
+
+    margin-bottom: 10px;
+
+}
+
+
+.advantage p {
+
+    color: var(--gris);
+
+    font-size: 14px;
+
+}
+
+
+/* ================================================= */
+/* PROJETS */
+/* ================================================= */
+
+#projets {
+
+    background: var(--noir2);
+
+}
+
+
+.projects {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+}
+
+
+.project {
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    transition: .3s;
+
+}
+
+
+.project:hover {
+
+    transform: translateY(-7px);
+
+    border-color: var(--or);
+
+}
+
+
+.project-image {
+
+    height: 190px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #071a2d;
+
+    font-size: 60px;
+
+}
+
+
+.project-content {
+
+    padding: 20px;
+
+}
+
+
+.project-content p {
+
+    color: var(--gris);
+
+    font-size: 14px;
+
+    margin-top: 8px;
+
+}
+
+
+/* ================================================= */
+/* COMPÉTENCES */
+/* ================================================= */
+
+.skills {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 60px;
+
+}
+
+
+.skill {
+
+    margin-bottom: 25px;
+
+}
+
+
+.skill-info {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 8px;
+
+}
+
+
+.skill-info span {
+
+    color: var(--gris);
+
+}
+
+
+.skill-info strong {
+
+    color: var(--or);
+
+}
+
+
+.progress {
+
+    height: 8px;
+
+    background: #1b2734;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+}
+
+
+.progress span {
+
+    display: block;
+
+    height: 100%;
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            var(--bleu),
+
+            var(--or)
+
+        );
+
+}
+
+
+/* ================================================= */
+/* LOCALISATION */
+/* ================================================= */
+
+#localisation {
+
+    background: var(--noir2);
+
+}
+
+
+.location {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1.5fr;
+
+    gap: 35px;
+
+}
+
+
+.location-info {
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    padding: 35px;
+
+}
+
+
+.location-info h2 {
+
+    font-size: 34px;
+
+    margin: 10px 0 20px;
+
+}
+
+
+.location-info p {
+
+    color: var(--gris);
+
+    margin-bottom: 20px;
+
+}
+
+
+.location-item {
+
+    margin-bottom: 18px;
+
+}
+
+
+.location-item strong {
+
+    color: var(--or);
+
+    display: block;
+
+}
+
+
+.map {
+
+    min-height: 400px;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+
+}
+
+
+.map iframe {
+
+    width: 100%;
+
+    height: 100%;
+
+    min-height: 400px;
+
+    border: 0;
+
+}
+
+
+/* ================================================= */
+/* CONTACT */
+/* ================================================= */
+
+#contact {
+
+    background: var(--noir);
+
+}
+
+
+.contact {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 60px;
+
+}
+
+
+.contact h2 {
+
+    font-size: 42px;
+
+    margin: 10px 0 20px;
+
+}
+
+
+.contact-intro {
+
+    color: var(--gris);
+
+    margin-bottom: 30px;
+
+}
+
+
+.contact-item {
+
+    margin-bottom: 20px;
+
+}
+
+
+.contact-item strong {
+
+    color: var(--or);
+
+    display: block;
+
+}
+
+
+.contact-form {
+
+    background: var(--card);
+
+    padding: 30px;
+
+    border-radius: 10px;
+
+    border: 1px solid var(--border);
+
+}
+
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+
+    width: 100%;
+
+    padding: 15px;
+
+    margin-bottom: 15px;
+
+    background: #08111d;
+
+    border: 1px solid #304050;
+
+    color: white;
+
+    border-radius: 5px;
+
+    outline: none;
+
+}
+
+
+.contact-form textarea {
+
+    height: 150px;
+
+    resize: vertical;
+
+}
+
+
+.contact-form select {
+
+    cursor: pointer;
+
+}
+
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+
+    border-color: var(--or);
+
+}
+
+
+.contact-form button {
+
+    width: 100%;
+
+}
+
+
+/* ================================================= */
+/* RÉSEAUX SOCIAUX */
+/* ================================================= */
+
+.social {
+
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 30px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.social a {
+
+    min-width: 45px;
+
+    height: 45px;
+
+    padding: 0 16px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50px;
+
+    background: var(--card);
+
+    border: 1px solid #304050;
+
+    transition: .3s;
+
+    font-weight: bold;
+
+}
+
+
+.social a:hover {
+
+    background: var(--or);
+
+    color: black;
+
+    transform: translateY(-4px);
+
+}
+
+
+/* ================================================= */
+/* BOUTON DISCUSSION */
+/* ================================================= */
+
+.chat-float {
+
+    position: fixed;
+
+    right: 22px;
+
+    bottom: 22px;
+
+    z-index: 2000;
+
+}
+
+
+.chat-toggle {
+
+    width: 62px;
+
+    height: 62px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: var(--vert);
+
+    color: white;
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.4);
+
+    transition: .3s;
+
+}
+
+
+.chat-toggle:hover {
+
+    transform: scale(1.08);
+
+}
+
+
+.chat-panel {
+
+    position: absolute;
+
+    right: 0;
+
+    bottom: 75px;
+
+    width: 310px;
+
+    background: var(--card);
+
+    border: 1px solid #304050;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,.5);
+
+    overflow: hidden;
+
+    display: none;
+
+}
+
+
+.chat-panel.show {
+
+    display: block;
+
+}
+
+
+.chat-header {
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--bleu),
+            var(--bleu-clair)
+        );
+
+    padding: 18px;
+
+}
+
+
+.chat-header strong {
+
+    display: block;
+
+    font-size: 18px;
+
+}
+
+
+.chat-header small {
+
+    opacity: .9;
+
+}
+
+
+.chat-body {
+
+    padding: 15px;
+
+}
+
+
+.chat-body p {
+
+    color: var(--gris);
+
+    font-size: 14px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.chat-option {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 13px;
+
+    margin: 8px 0;
+
+    background: #08111d;
+
+    border: 1px solid #304050;
+
+    border-radius: 10px;
+
+    transition: .25s;
+
+}
+
+
+.chat-option:hover {
+
+    border-color: var(--or);
+
+    transform: translateX(3px);
+
+}
+
+
+.chat-option .ico {
+
+    font-size: 24px;
+
+}
+
+
+.chat-option strong {
+
+    display: block;
+
+}
+
+
+.chat-option small {
+
+    color: var(--gris);
+
+}
+
+
+.chat-close {
+
+    position: absolute;
+
+    right: 12px;
+
+    top: 10px;
+
+    border: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+}
+
+
+/* ================================================= */
+/* FOOTER */
+/* ================================================= */
+
+footer {
+
+    padding: 50px 0 20px;
+
+    background: #03060a;
+
+}
+
+
+.footer-content {
+
+    display: grid;
+
+    grid-template-columns:
+        2fr 1fr 1fr;
+
+    gap: 40px;
+
+}
+
+
+footer p,
+footer a {
+
+    color: var(--gris);
+
+    font-size: 14px;
+
+}
+
+
+footer h3 {
+
+    color: var(--or);
+
+    margin-bottom: 15px;
+
+}
+
+
+footer a {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+}
+
+
+.copyright {
+
+    text-align: center;
+
+    border-top: 1px solid var(--border);
+
+    margin-top: 40px;
+
+    padding-top: 20px;
+
+}
+
+
+/* ================================================= */
+/* ANIMATION */
+/* ================================================= */
+
+.fade-in {
+
+    animation:
+        fadeIn 1s ease;
+
+}
+
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(20px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* ================================================= */
+/* MOBILE */
+/* ================================================= */
+
+@media (max-width: 900px) {
+
+    .services,
+    .advantages,
+    .projects {
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+
+    .about,
+    .skills,
+    .contact,
+    .location,
+    .footer-content {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .menu-button {
+
+        display: block;
+
+    }
+
+
+    .menu {
+
+        position: absolute;
+
+        top: 75px;
+
+        left: 0;
+
+        width: 100%;
+
+        background: #08111d;
+
+        display: none;
+
+        flex-direction: column;
+
+        padding: 25px;
+
+        align-items: flex-start;
+
+    }
+
+
+    .menu.show {
+
+        display: flex;
+
+    }
+
+
+    .services,
+    .advantages,
+    .projects {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .section-title h2,
+    .about h2,
+    .contact h2 {
+
+        font-size: 32px;
+
+    }
+
+
+    .hero h1 {
+
+        font-size: 43px;
+
+    }
+
+
+    .about-photo {
+
+        height: 420px;
+
+    }
+
+
+    .chat-panel {
+
+        right: -5px;
+
+        width:
+            min(310px, calc(100vw - 35px));
+
+    }
+
+}
+
+</style>
+
 </head>
 
 
 <body>
 
 
-    <!-- ================= HEADER ================= -->
+<!-- ================================================= -->
+<!-- HEADER -->
+<!-- ================================================= -->
 
-    <header>
+<header>
 
-        <div class="container nav">
+<div class="container nav">
 
-            <a href="#accueil" class="logo">
+<a href="#accueil" class="logo">
 
-                <div class="logo-icon">⚡</div>
+<div class="logo-icon">
+⚡
+</div>
 
-                <div class="logo-text">
-                    <strong>MOÏSE</strong>
-                    <span>TECH & ÉNERGIE</span>
-                </div>
+<div class="logo-text">
 
-            </a>
+<strong>
+MOÏSE
+</strong>
 
+<span>
+TECH & ÉNERGIE
+</span>
 
-            <button class="menu-button" id="menuButton">
-                ☰
-            </button>
+</div>
 
+</a>
 
-            <nav class="menu" id="menu">
 
-                <a href="#accueil">Accueil</a>
+<button
+class="menu-button"
+id="menuButton">
 
-                <a href="#apropos">À propos</a>
+☰
 
-                <a href="#services">Services</a>
+</button>
 
-                <a href="#projets">Projets</a>
 
-                <a href="#competences">Compétences</a>
+<nav
+class="menu"
+id="menu">
 
-                <a href="#contact">Contact</a>
+<a href="#accueil">
+Accueil
+</a>
 
-                <a href="#contact" class="btn">
-                    Devis gratuit
-                </a>
+<a href="#apropos">
+À propos
+</a>
 
-            </nav>
+<a href="#services">
+Services
+</a>
 
-        </div>
+<a href="#projets">
+Réalisations
+</a>
 
-    </header>
+<a href="#competences">
+Compétences
+</a>
 
+<a href="#localisation">
+Localisation
+</a>
 
+<a href="#contact">
+Contact
+</a>
 
-    <!-- ================= ACCUEIL ================= -->
+<a href="#contact"
+class="btn">
 
-    <section class="hero" id="accueil">
+Devis gratuit
 
-        <div class="container">
+</a>
 
-            <div class="hero-content">
+</nav>
 
-                <div class="small-title">
-                    TECHNOLOGIE • ÉNERGIE • INNOVATION
-                </div>
+</div>
 
-                <h1>
-                    Des solutions
-                    <span>technologiques</span>
-                    pour un avenir connecté.
-                </h1>
+</header>
 
-                <p>
-                    Bienvenue chez Moïse Tech & Énergie.
-                    Nous proposons des solutions modernes dans
-                    les domaines du numérique, des réseaux,
-                    de la sécurité et de l'énergie.
-                </p>
 
-                <div class="hero-buttons">
+<!-- ================================================= -->
+<!-- ACCUEIL -->
+<!-- ================================================= -->
 
-                    <a href="#services" class="btn">
-                        Découvrir mes services
-                    </a>
+<section
+class="hero"
+id="accueil">
 
-                    <a href="#contact" class="btn btn-blue">
-                        Me contacter
-                    </a>
+<div class="container">
 
-                </div>
+<div class="hero-content fade-in">
 
-            </div>
+<div class="small-title">
 
-        </div>
+TECHNOLOGIE • ÉNERGIE •
+SÉCURITÉ • INNOVATION
 
-    </section>
+</div>
 
 
+<h1>
 
-    <!-- ================= À PROPOS ================= -->
+Des solutions
 
-    <section id="apropos">
+<span>
+technologiques
+</span>
 
-        <div class="container about">
+pour un avenir connecté.
 
-            <div class="about-image">
+</h1>
 
-                <div>
-                    ⚡
-                    <br>
-                    💻
-                    <br>
-                    🔧
-                </div>
 
-            </div>
+<p>
 
+Bienvenue chez
 
-            <div>
+<strong>
+Moïse Tech & Énergie
+</strong>.
 
-                <div class="small-title">
-                    À PROPOS DE MOI
-                </div>
+Nous proposons des solutions modernes
+dans les domaines de l'informatique,
+des réseaux, de la sécurité électronique,
+de l'incendie, de l'électricité,
+de l'électronique, de la domotique
+et de l'énergie.
 
-                <h2>
-                    Passionné par la technologie
-                    et l'innovation
-                </h2>
+</p>
 
-                <p>
-                    Je suis Moïse, passionné par la technologie,
-                    l'informatique, les réseaux, l'électricité
-                    et les solutions de sécurité.
-                </p>
 
-                <p>
-                    Mon objectif est de proposer des solutions
-                    fiables, modernes et adaptées aux besoins
-                    de mes clients.
-                </p>
+<div class="hero-buttons">
 
-                <ul>
+<a
+href="#services"
+class="btn">
 
-                    <li>
-                        Installation et configuration
-                    </li>
+Découvrir nos services
 
-                    <li>
-                        Solutions personnalisées
-                    </li>
+</a>
 
-                    <li>
-                        Service professionnel
-                    </li>
 
-                    <li>
-                        Accompagnement du client
-                    </li>
+<a
+href="https://wa.me/22871670258?text=Bonjour%20Mo%C3%AFse%20Tech%20%26%20%C3%89nergie%2C%20je%20souhaite%20avoir%20des%20informations."
+target="_blank"
+rel="noopener"
+class="btn btn-blue">
 
-                </ul>
+💬 WhatsApp
 
-                <a href="#contact" class="btn">
-                    Travaillons ensemble
-                </a>
+</a>
 
-            </div>
+</div>
 
-        </div>
+</div>
 
-    </section>
+</div>
 
+</section>
 
 
-    <!-- ================= SERVICES ================= -->
+<!-- ================================================= -->
+<!-- FONDATEUR -->
+<!-- ================================================= -->
 
-    <section id="services">
+<section id="apropos">
 
-        <div class="container">
+<div class="container about">
 
-            <div class="section-title">
 
-                <small>NOS SERVICES</small>
+<!-- PHOTO -->
 
-                <h2>
-                    Ce que nous proposons
-                </h2>
+<div class="about-photo">
 
-                <p>
-                    Des solutions professionnelles adaptées
-                    à vos besoins.
-                </p>
+<img
+src="images/fondateur.jpg"
+alt="LEMON ESSO-DINAM MOÏSE - Fondateur de Moïse Tech & Énergie">
 
-            </div>
+</div>
 
 
-            <div class="services">
+<!-- TEXTE -->
 
+<div>
 
-                <div class="service">
+<div class="small-title">
 
-                    <div class="service-icon">
-                        💻
-                    </div>
+À PROPOS DU FONDATEUR
 
-                    <h3>
-                        Création de sites web
-                    </h3>
+</div>
 
-                    <p>
-                        Création de sites web modernes,
-                        professionnels et adaptés aux téléphones.
-                    </p>
 
-                </div>
+<h2>
 
+Technologie, sécurité
+et innovation au service
+de vos projets.
 
-                <div class="service">
+</h2>
 
-                    <div class="service-icon">
-                        🌐
-                    </div>
 
-                    <h3>
-                        Réseaux informatiques
-                    </h3>
+<p>
 
-                    <p>
-                        Installation, configuration et
-                        maintenance des réseaux informatiques.
-                    </p>
+Je suis
 
-                </div>
+<strong>
+LEMON ESSO-DINAM MOÏSE
+</strong>,
 
+fondateur de
 
-                <div class="service">
+<strong>
+Moïse Tech & Énergie
+</strong>.
 
-                    <div class="service-icon">
-                        📹
-                    </div>
+</p>
 
-                    <h3>
-                        Vidéosurveillance
-                    </h3>
 
-                    <p>
-                        Installation de caméras de surveillance
-                        pour sécuriser vos espaces.
-                    </p>
+<p>
 
-                </div>
+Passionné par la technologie,
+l'informatique, les réseaux,
+l'électricité, l'électronique
+et les systèmes de sécurité,
+je propose des solutions adaptées
+aux besoins des particuliers,
+commerces et entreprises.
 
+</p>
 
-                <div class="service">
 
-                    <div class="service-icon">
-                        🔥
-                    </div>
+<p>
 
-                    <h3>
-                        Alarmes & incendie
-                    </h3>
+Mon objectif est de mettre la
+technologie au service des personnes
+et des entreprises à travers des
+installations fiables, modernes
+et adaptées à chaque projet.
 
-                    <p>
-                        Installation de systèmes d'alarme
-                        et de détection incendie.
-                    </p>
+</p>
 
-                </div>
 
+<ul>
 
-                <div class="service">
+<li>
+Installation et configuration professionnelle
+</li>
 
-                    <div class="service-icon">
-                        ⚡
-                    </div>
+<li>
+Solutions personnalisées
+</li>
 
-                    <h3>
-                        Électricité & énergie
-                    </h3>
+<li>
+Maintenance et dépannage
+</li>
 
-                    <p>
-                        Solutions électriques et énergétiques
-                        adaptées à vos besoins.
-                    </p>
+<li>
+Accompagnement du client
+</li>
 
-                </div>
+<li>
+Conseils techniques
+</li>
 
+</ul>
 
-                <div class="service">
 
-                    <div class="service-icon">
-                        🏠
-                    </div>
+<a
+href="#contact"
+class="btn">
 
-                    <h3>
-                        Domotique
-                    </h3>
+Travaillons ensemble
 
-                    <p>
-                        Automatisation et solutions intelligentes
-                        pour votre maison.
-                    </p>
+</a>
 
-                </div>
+</div>
 
+</div>
 
-                <div class="service">
+</section>
 
-                    <div class="service-icon">
-                        🔧
-                    </div>
 
-                    <h3>
-                        Maintenance
-                    </h3>
+<!-- ================================================= -->
+<!-- SERVICES -->
+<!-- ================================================= -->
 
-                    <p>
-                        Maintenance informatique, électronique
-                        et dépannage.
-                    </p>
+<section id="services">
 
-                </div>
+<div class="container">
 
 
-                <div class="service">
+<div class="section-title">
 
-                    <div class="service-icon">
-                        ☀️
-                    </div>
+<small>
+NOS SERVICES
+</small>
 
-                    <h3>
-                        Énergie solaire
-                    </h3>
+<h2>
+Des solutions complètes
+</h2>
 
-                    <p>
-                        Solutions énergétiques modernes
-                        et durables.
-                    </p>
+<p>
+Découvrez nos principaux domaines
+d'intervention.
+</p>
 
-                </div>
+</div>
 
-            </div>
 
-        </div>
+<div class="services">
 
-    </section>
 
+<!-- RÉSEAUX -->
 
+<article class="service">
 
-    <!-- ================= PROJETS ================= -->
+<div class="service-image">
 
-    <section id="projets">
+<img
+src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80"
+alt="Réseau informatique et baie serveur">
 
-        <div class="container">
+</div>
 
-            <div class="section-title">
 
-                <small>MES RÉALISATIONS</small>
+<div class="service-content">
 
-                <h2>
-                    Quelques projets
-                </h2>
+<div class="service-icon">
+🌐
+</div>
 
-                <p>
-                    Découvrez quelques domaines
-                    dans lesquels nous intervenons.
-                </p>
 
-            </div>
+<h3>
+Réseaux informatiques
+</h3>
 
 
-            <div class="projects">
+<p class="service-description">
 
+Mise en place de réseaux fiables,
+performants et adaptés aux entreprises,
+bureaux, commerces et particuliers.
 
-                <div class="project">
+</p>
 
-                    <div class="project-image">
-                        📹
-                    </div>
 
-                    <div class="project-content">
+<ul class="service-list">
 
-                        <h3>
-                            Vidéosurveillance
-                        </h3>
+<li>Installation de réseaux LAN</li>
 
-                        <p>
-                            Installation de caméras de sécurité.
-                        </p>
+<li>Câblage réseau RJ45</li>
 
-                    </div>
+<li>Installation de baies informatiques</li>
 
-                </div>
+<li>Panneaux de brassage</li>
 
+<li>Organisation des câbles</li>
 
-                <div class="project">
+<li>Installation de switchs</li>
 
-                    <div class="project-image">
-                        🌐
-                    </div>
+<li>Configuration de routeurs</li>
 
-                    <div class="project-content">
+<li>Installation de points d'accès Wi-Fi</li>
 
-                        <h3>
-                            Réseau informatique
-                        </h3>
+<li>Configuration réseau</li>
 
-                        <p>
-                            Installation et câblage réseau.
-                        </p>
+<li>Sécurisation du réseau</li>
 
-                    </div>
+<li>Maintenance et dépannage</li>
 
-                </div>
+</ul>
 
 
-                <div class="project">
+<a
+href="https://wa.me/22871670258?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20vos%20services%20de%20r%C3%A9seaux%20informatiques."
+target="_blank"
+class="btn">
 
-                    <div class="project-image">
-                        🔥
-                    </div>
+Demander un devis
 
-                    <div class="project-content">
+</a>
 
-                        <h3>
-                            Système incendie
-                        </h3>
+</div>
 
-                        <p>
-                            Installation de systèmes de détection.
-                        </p>
+</article>
 
-                    </div>
 
-                </div>
+<!-- INCENDIE -->
 
+<article class="service">
 
-                <div class="project">
+<div class="service-image">
 
-                    <div class="project-image">
-                        💻
-                    </div>
+<img
+src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80"
+alt="Système de sécurité incendie">
 
-                    <div class="project-content">
+</div>
 
-                        <h3>
-                            Création web
-                        </h3>
 
-                        <p>
-                            Création de sites web professionnels.
-                        </p>
+<div class="service-content">
 
-                    </div>
+<div class="service-icon">
+🔥
+</div>
 
-                </div>
 
+<h3>
+Sécurité incendie
+</h3>
 
-                <div class="project">
 
-                    <div class="project-image">
-                        ☀️
-                    </div>
+<p class="service-description">
 
-                    <div class="project-content">
+Des solutions de détection et
+d'alerte destinées à améliorer
+la protection des personnes,
+des locaux et des équipements.
 
-                        <h3>
-                            Énergie
-                        </h3>
+</p>
 
-                        <p>
-                            Solutions énergétiques modernes.
-                        </p>
 
-                    </div>
+<ul class="service-list">
 
-                </div>
+<li>Centrales de détection incendie</li>
 
+<li>Détecteurs de fumée</li>
 
-                <div class="project">
+<li>Détecteurs de chaleur</li>
 
-                    <div class="project-image">
-                        🏠
-                    </div>
+<li>Déclencheurs manuels</li>
 
-                    <div class="project-content">
+<li>Sirènes d'alarme</li>
 
-                        <h3>
-                            Domotique
-                        </h3>
+<li>Voyants et signalisation</li>
 
-                        <p>
-                            Automatisation et maison intelligente.
-                        </p>
+<li>Câblage des systèmes incendie</li>
 
-                    </div>
+<li>Installation et configuration</li>
 
-                </div>
+<li>Maintenance et contrôle</li>
 
-            </div>
+</ul>
 
-        </div>
 
-    </section>
+<a
+href="https://wa.me/22871670258?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20vos%20solutions%20de%20s%C3%A9curit%C3%A9%20incendie."
+target="_blank"
+class="btn">
 
+Demander un devis
 
+</a>
 
-    <!-- ================= COMPÉTENCES ================= -->
+</div>
 
-    <section id="competences">
+</article>
 
-        <div class="container skills">
 
-            <div>
+<!-- VIDÉOSURVEILLANCE -->
 
-                <div class="small-title">
-                    MES COMPÉTENCES
-                </div>
+<article class="service">
 
-                <h2>
-                    Des compétences variées
-                </h2>
+<div class="service-image">
 
-                <br>
+<img
+src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1200&q=80"
+alt="Caméra de vidéosurveillance">
 
+</div>
 
-                <div class="skill">
 
-                    <div class="skill-info">
-                        <span>Réseaux informatiques</span>
-                        <strong>95%</strong>
-                    </div>
+<div class="service-content">
 
-                    <div class="progress">
-                        <span style="width:95%"></span>
-                    </div>
+<div class="service-icon">
+📹
+</div>
 
-                </div>
 
+<h3>
+Vidéosurveillance
+</h3>
 
-                <div class="skill">
 
-                    <div class="skill-info">
-                        <span>Sécurité électronique</span>
-                        <strong>90%</strong>
-                    </div>
+<p class="service-description">
 
-                    <div class="progress">
-                        <span style="width:90%"></span>
-                    </div>
+Sécurisez votre maison,
+commerce ou entreprise grâce
+à des solutions de surveillance
+adaptées.
 
-                </div>
+</p>
 
 
-                <div class="skill">
+<ul class="service-list">
 
-                    <div class="skill-info">
-                        <span>Création web</span>
-                        <strong>90%</strong>
-                    </div>
+<li>Caméras IP</li>
 
-                    <div class="progress">
-                        <span style="width:90%"></span>
-                    </div>
+<li>Caméras Wi-Fi</li>
 
-                </div>
+<li>DVR et NVR</li>
 
+<li>Installation intérieure</li>
 
-                <div class="skill">
+<li>Installation extérieure</li>
 
-                    <div class="skill-info">
-                        <span>Électricité & énergie</span>
-                        <strong>85%</strong>
-                    </div>
+<li>Configuration réseau</li>
 
-                    <div class="progress">
-                        <span style="width:85%"></span>
-                    </div>
+<li>Surveillance à distance</li>
 
-                </div>
+<li>Consultation depuis smartphone</li>
 
-            </div>
+<li>Maintenance et dépannage</li>
 
+</ul>
 
-            <div>
 
-                <div class="small-title">
-                    NOS TECHNOLOGIES
-                </div>
+<a
+href="https://wa.me/22871670258?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20une%20installation%20de%20vid%C3%A9osurveillance."
+target="_blank"
+class="btn">
 
-                <h2>
-                    Outils utilisés
-                </h2>
+Demander un devis
 
-                <br>
+</a>
 
-                <p style="color:#aeb8c4;">
-                    HTML • CSS • JavaScript • Réseaux •
-                    Mikrotik • Sécurité électronique •
-                    Électricité • Domotique
-                </p>
+</div>
 
-            </div>
+</article>
 
-        </div>
 
-    </section>
+<!-- ALARMES -->
 
+<article class="service">
 
+<div class="service-image">
 
-    <!-- ================= CONTACT ================= -->
+<img
+src="https://images.unsplash.com/photo-1558008258-3256797b43f3?auto=format&fit=crop&w=1200&q=80"
+alt="Système d'alarme de sécurité">
 
-    <section id="contact">
+</div>
 
-        <div class="container contact">
 
+<div class="service-content">
 
-            <div>
+<div class="service-icon">
+🚨
+</div>
 
-                <div class="small-title">
-                    CONTACT
-                </div>
 
-                <h2>
-                    Parlons de votre projet
-                </h2>
+<h3>
+Alarmes & sécurité
+</h3>
 
-                <p class="contact-intro">
-                    Vous avez un projet ou besoin d'une
-                    intervention ? Contactez-moi.
-                </p>
 
+<p class="service-description">
 
-                <div class="contact-item">
+Renforcez la sécurité de vos
+locaux grâce à des systèmes
+d'alarme adaptés à votre environnement.
 
-                    <strong>📞 Appel</strong>
+</p>
 
-                    <a href="tel:+22897613312">
-                        97 61 33 12
-                    </a>
 
-                </div>
+<ul class="service-list">
 
+<li>Alarmes anti-intrusion</li>
 
-                <div class="contact-item">
+<li>Détecteurs de mouvement</li>
 
-                    <strong>💬 WhatsApp</strong>
+<li>Détecteurs d'ouverture</li>
 
-                    <a href="https://wa.me/22871670258"
-                       target="_blank">
+<li>Sirènes</li>
 
-                        71 67 02 58
+<li>Télécommandes</li>
 
-                    </a>
+<li>Centrales d'alarme</li>
 
-                </div>
+<li>Configuration</li>
 
+<li>Maintenance</li>
 
-                <div class="contact-item">
+</ul>
 
-                    <strong>✉️ Email</strong>
 
-                    <a href="mailto:lemonmoise1@gmail.com">
+<a
+href="https://wa.me/22871670258?text=Bonjour%2C%20je%20souhaite%20des%20informations%20sur%20vos%20syst%C3%A8mes%20d%27alarme."
+target="_blank"
+class="btn">
 
-                        lemonmoise1@gmail.com
+Demander un devis
 
-                    </a>
+</a>
 
-                </div>
+</div>
 
+</article>
 
-                <!-- RÉSEAUX SOCIAUX -->
 
-                <div class="social">
+<!-- ÉLECTRICITÉ -->
 
-                    <!-- FACEBOOK -->
+<article class="service">
 
-                    <a href="https://www.facebook.com/walter.obrian.71697"
-                       target="_blank"
-                       rel="noopener noreferrer">
+<div class="service-image">
 
-                        f
+<img
+src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1200&q=80"
+alt="Installation électrique">
 
-                    </a>
+</div>
 
 
-                    <!-- INSTAGRAM -->
+<div class="service-content">
 
-                    <a href="#" target="_blank">
-                        Instagram
-                    </a>
+<div class="service-icon">
+⚡
+</div>
 
 
-                    <!-- TIKTOK -->
+<h3>
+Électricité & électronique
+</h3>
 
-                    <a href="#" target="_blank">
-                        TikTok
-                    </a>
 
-                </div>
+<p class="service-description">
 
-            </div>
+Des solutions électriques et
+électroniques adaptées aux
+bâtiments et équipements.
 
+</p>
 
 
-            <!-- FORMULAIRE -->
+<ul class="service-list">
 
-            <form class="contact-form" id="contactForm">
+<li>Installations électriques</li>
 
-                <input
-                    type="text"
-                    placeholder="Votre nom"
-                    required
-                >
+<li>Câblage électrique</li>
 
-                <input
-                    type="email"
-                    placeholder="Votre adresse e-mail"
-                    required
-                >
+<li>Tableaux électriques</li>
 
-                <input
-                    type="tel"
-                    placeholder="Votre téléphone"
-                >
+<li>Diagnostic de pannes</li>
 
-                <textarea
-                    placeholder="Décrivez votre projet..."
-                    required
-                ></textarea>
+<li>Maintenance électrique</li>
 
-                <button class="btn" type="submit">
-                    Envoyer le message
-                </button>
+<li>Maintenance électronique</li>
 
-                <p id="message"
-                   style="color:#ffc400; margin-top:15px;">
-                </p>
+<li>Installations basse tension</li>
 
-            </form>
+<li>Dépannage et entretien</li>
 
-        </div>
+</ul>
 
-    </section>
 
+<a
+href="https://wa.me/22871670258?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20vos%20services%20d%27%C3%A9lectricit%C3%A9%20et%20d%27%C3%A9lectronique."
+target="_blank"
+class="btn">
 
+Demander un devis
 
-    <!-- ================= WHATSAPP ================= -->
+</a>
 
-    <a
-        class="whatsapp"
-        href="https://wa.me/22871670258"
-        target="_blank"
-        aria-label="Contacter Moïse sur WhatsApp">
+</div>
 
-        ☎️
+</article>
 
-    </a>
 
+<!-- INFORMATIQUE -->
 
+<article class="service">
 
-    <!-- ================= FOOTER ================= -->
+<div class="service-image">
 
-    <footer>
+<img
+src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80"
+alt="Informatique et création de site web">
 
-        <div class="container footer-content">
+</div>
 
 
-            <div>
+<div class="service-content">
 
-                <div class="logo">
+<div class="service-icon">
+💻
+</div>
 
-                    <div class="logo-icon">
-                        ⚡
-                    </div>
 
-                    <div class="logo-text">
-                        <strong>MOÏSE</strong>
-                        <span>TECH & ÉNERGIE</span>
-                    </div>
+<h3>
+Informatique & création web
+</h3>
 
-                </div>
 
-                <br>
+<p class="service-description">
 
-                <p>
-                    Des solutions technologiques,
-                    énergétiques et de sécurité
-                    adaptées à vos besoins.
-                </p>
+Des solutions numériques modernes
+pour développer votre activité
+et améliorer votre présence en ligne.
 
-            </div>
+</p>
 
 
-            <div>
+<ul class="service-list">
 
-                <h3>Navigation</h3>
+<li>Création de sites web</li>
 
-                <a href="#accueil">Accueil</a>
-                <a href="#apropos">À propos</a>
-                <a href="#services">Services</a>
-                <a href="#projets">Projets</a>
-                <a href="#contact">Contact</a>
+<li>Sites vitrines professionnels</li>
 
-            </div>
+<li>HTML, CSS et JavaScript</li>
 
+<li>Maintenance de sites</li>
 
-            <div>
+<li>Assistance informatique</li>
 
-                <h3>Contact</h3>
+<li>Installation de logiciels</li>
 
-                <a href="tel:+22897613312">
-                    97 61 33 12
-                </a>
+<li>Maintenance informatique</li>
 
-                <a href="https://wa.me/22871670258">
-                    WhatsApp
-                </a>
+</ul>
 
-                <a href="mailto:lemonmoise1@gmail.com">
-                    Email
-                </a>
 
-            </div>
+<a
+href="https://wa.me/22871670258?text=Bonjour%2C%20je%20souhaite%20cr%C3%A9er%20un%20site%20web%20pour%20mon%20activit%C3%A9."
+target="_blank"
+class="btn">
 
-        </div>
+Demander un devis
 
+</a>
 
-        <div class="copyright">
+</div>
 
-            <p>
-                © 2026 Moïse Tech & Énergie.
-                Tous droits réservés.
-            </p>
+</article>
 
-        </div>
 
-    </footer>
+<!-- DOMOTIQUE -->
 
+<article class="service">
 
+<div class="service-image">
 
-    <!-- ================= JAVASCRIPT ================= -->
+<img
+src="https://images.unsplash.com/photo-1558008258-3256797b43f3?auto=format&fit=crop&w=1200&q=80"
+alt="Domotique maison intelligente">
 
-    <script>
+</div>
 
-        // MENU MOBILE
 
-        const menuButton =
-            document.getElementById("menuButton");
+<div class="service-content">
 
-        const menu =
-            document.getElementById("menu");
+<div class="service-icon">
+🏠
+</div>
 
 
-        menuButton.addEventListener("click", function() {
+<h3>
+Domotique & automatisation
+</h3>
 
-            menu.classList.toggle("show");
 
-        });
+<p class="service-description">
 
+Rendez vos espaces plus intelligents,
+pratiques et faciles à contrôler.
 
-        // FERMER LE MENU APRÈS AVOIR CLIQUÉ
+</p>
 
-        const links =
-            document.querySelectorAll(".menu a");
 
+<ul class="service-list">
 
-        links.forEach(function(link) {
+<li>Éclairage intelligent</li>
 
-            link.addEventListener("click", function() {
+<li>Automatisation</li>
 
-                menu.classList.remove("show");
+<li>Sécurité connectée</li>
 
-            });
+<li>Commande à distance</li>
 
-        });
+<li>Gestion intelligente</li>
 
+</ul>
 
-        // FORMULAIRE
 
-        const form =
-            document.getElementById("contactForm");
+<a
+href="https://wa.me/22871670258?text=Bonjour%2C%20je%20souhaite%20des%20informations%20sur%20vos%20solutions%20de%20domotique."
+target="_blank"
+class="btn">
 
-        const message =
-            document.getElementById("message");
+Demander un devis
 
+</a>
 
-        form.addEventListener("submit", function(event) {
+</div>
 
-            event.preventDefault();
+</article>
 
-            message.textContent =
-                "Merci ! Votre message a bien été enregistré.";
 
-            form.reset();
+<!-- SOLAIRE -->
 
-        });
+<article class="service">
 
-    </script>
+<div class="service-image">
 
-</body>
-</html>
+<img
+src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=80"
+alt="Panneaux solaires">
+
+</div>
+
+
+<div class="service-content">
+
+<div class="service-icon">
+☀️
+</div>
+
+
+<h3>
+Énergie solaire
+</h3>
+
+
+<p class="service-description">
+
+Des solutions énergétiques modernes
+pour répondre à différents besoins
+en alimentation électrique.
+
+</p>
+
+
+<ul class="service-list">
+
+<li>Installation de panneaux solaires</li>
+
+<li>Solutions d'alimentation</li>
+
+<li>Systèmes photovoltaïques</li>
+
+<li>Maintenance</li>
+
+<li>Diagnostic et assistance</li>
+
+</ul>
+
+
+<a
+href="https://wa.me/22871670258?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20une%20solution%20solaire."
+target="_blank"
+class="btn">
+
+Demander un devis
+
+</a>
+
+</div>
+
+</article>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- AVANTAGES -->
+<!-- ================================================= -->
+
+<section id="avantages">
+
+<div class="container">
+
+<div class="section-title">
+
+<small>
+POURQUOI NOUS CHOISIR ?
+</small>
+
+<h2>
+Une approche professionnelle
+</h2>
+
+<p>
+Notre priorité est de proposer
+des solutions adaptées à chaque projet.
+</p>
+
+</div>
+
+
+<div class="advantages">
+
+
+<div class="advantage">
+
+<div class="advantage-icon">
+🛠️
+</div>
+
+<h3>
+Installation
+</h3>
+
+<p>
+Des installations pensées
+selon les besoins du projet.
+</p>
+
+</div>
+
+
+<div class="advantage">
+
+<div class="advantage-icon">
+🔐
+</div>
+
+<h3>
+Sécurité
+</h3>
+
+<p>
+Des solutions destinées à
+renforcer la sécurité de vos locaux.
+</p>
+
+</div>
+
+
+<div class="advantage">
+
+<div class="advantage-icon">
+⚙️
+</div>
+
+<h3>
+Maintenance
+</h3>
+
+<p>
+Assistance, entretien et
+dépannage de vos installations.
+</p>
+
+</div>
+
+
+<div class="advantage">
+
+<div class="advantage-icon">
+🤝
+</div>
+
+<h3>
+Accompagnement
+</h3>
+
+<p>
+Conseils et accompagnement
+dans le choix de vos solutions.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- RÉALISATIONS -->
+<!-- ================================================= -->
+
+<section id="projets">
+
+<div class="container">
+
+<div class="section-title">
+
+<small>
+NOS DOMAINES D'INTERVENTION
+</small>
+
+<h2>
+Quelques réalisations
+</h2>
+
+<p>
+Découvrez les principaux domaines
+dans lesquels nous intervenons.
+</p>
+
+</div>
+
+
+<div class="projects">
+
+
+<div class="project">
+
+<div class="project-image">
+📹
+</div>
+
+<div class="project-content">
+
+<h3>
+Vidéosurveillance
+</h3>
+
+<p>
+Installation et configuration
+de systèmes de surveillance.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="project">
+
+<div class="project-image">
+🌐
+</div>
+
+<div class="project-content">
+
+<h3>
+Réseau informatique
+</h3>
+
+<p>
+Câblage, Wi-Fi,
+configuration et organisation réseau.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="project">
+
+<div class="project-image">
+🔥
+</div>
+
+<div class="project-content">
+
+<h3>
+Système incendie
+</h3>
+
+<p>
+Détection, alarme et
+protection incendie.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="project">
+
+<div class="project-image">
+🚨
+</div>
+
+<div class="project-content">
+
+<h3>
+Système d'alarme
+</h3>
+
+<p>
+Solutions de sécurité
+et détection d'intrusion.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="project">
+
+<div class="project-image">
+⚡
+</div>
+
+<div class="project-content">
+
+<h3>
+Électricité & électronique
+</h3>
+
+<p>
+Installation, maintenance
+et dépannage.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="project">
+
+<div class="project-image">
+💻
+</div>
+
+<div class="project-content">
+
+<h3>
+Création web
+</h3>
+
+<p>
+Sites web modernes
+et professionnels.
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- COMPÉTENCES -->
+<!-- ================================================= -->
+
+<section id="competences">
+
+<div class="container skills">
+
+
+<div>
+
+<div class="small-title">
+NOS COMPÉTENCES
+</div>
+
+
+<h2>
+
+Des compétences variées
+au service de vos projets
+
+</h2>
+
+
+<br>
+
+
+<div class="skill">
+
+<div class="skill-info">
+
+<span>
+Réseaux informatiques
+</span>
+
+<strong>
+95%
+</strong>
+
+</div>
+
+
+<div class="progress">
+
+<span style="width:95%"></span>
+
+</div>
+
+</div>
+
+
+<div class="skill">
+
+<div class="skill-info">
+
+<span>
+Sécurité électronique
+</span>
+
+<strong>
+90%
+</strong>
+
+</div>
+
+
+<div class="progress">
+
+<span style="width:90%"></span>
+
+</div>
+
+</div>
+
+
+<div class="skill">
+
+<div class="skill-info">
+
+<span>
+Création web
+</span>
+
+<strong>
+90%
+</strong>
+
+</div>
+
+
+<div class="progress">
+
+<span style="width:90%"></span>
+
+</div>
+
+</div>
+
+
+<div class="skill">
+
+<div class="skill-info">
+
+<span>
+Électricité & énergie
+</span>
+
+<strong>
+85%
+</strong>
+
+</div>
+
+
+<div class="progress">
+
+<span style="width:85%"></span>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div>
+
+<div class="small-title">
+TECHNOLOGIES
+</div>
+
+
+<h2>
+Outils et domaines
+</h2>
+
+
+<br>
+
+
+<p style="color:#aeb8c4;">
+
+HTML • CSS • JavaScript •
+Réseaux informatiques •
+Wi-Fi • MikroTik •
+Vidéosurveillance •
+Alarmes •
+Sécurité incendie •
+Électricité •
+Électronique •
+Domotique •
+Énergie solaire
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- LOCALISATION -->
+<!-- ================================================= -->
+
+<section id="localisation">
+
+<div class="container location">
+
+
+<div class="location-info">
+
+<div class="small-title">
+
+NOTRE LOCALISATION
+
+</div>
+
+
+<h2>
+
+Retrouvez-nous facilement
+
+</h2>
+
+
+<p>
+
+Vous souhaitez nous rencontrer,
+discuter d'un projet ou demander
+une intervention ?
+
+Contactez-nous avant votre déplacement
+afin de confirmer le lieu et les
+modalités de rendez-vous.
+
+</p>
+
+
+<div class="location-item">
+
+<strong>
+📍 Zone d'intervention
+</strong>
+
+Lomé et environs, Togo
+
+</div>
+
+
+<div class="location-item">
+
+<strong>
+📞 Téléphone
+</strong>
+
+<a href="tel:+22897613312">
+
+97 61 33 12
+
+</a>
+
+</div>
+
+
+<div class="location-item">
+
+<strong>
+💬 WhatsApp
+</strong>
+
+<a
+href="https://wa.me/22871670258"
+target="_blank">
+
+71 67 02 58
+
+</a>
+
+</div>
+
+
+<a
+href="https://www.google.com/maps/search/?api=1&query=Lome%2C%20Togo"
+target="_blank"
+class="btn">
+
+📍 Ouvrir Google Maps
+
+</a>
+
+</div>
+
+
+<div class="map">
+
+<iframe
+
+src="https://www.google.com/maps?q=Lome,Togo&output=embed"
+
+loading="lazy"
+
+allowfullscreen>
+
+</iframe>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- CONTACT -->
+<!-- ================================================= -->
+
+<section id="contact">
+
+<div class="container contact">
+
+
+<div>
+
+<div class="small-title">
+
+CONTACT
+
+</div>
+
+
+<h2>
+
+Parlons de votre projet
+
+</h2>
+
+
+<p class="contact-intro">
+
+Vous avez besoin d'une installation,
+d'une maintenance ou d'un devis ?
+
+Décrivez-nous votre projet et
+nous vous répondrons.
+
+</p>
+
+
+<div class="contact-item">
+
+<strong>
+📞 Appel
+</strong>
+
+<a href="tel:+22897613312">
+
+97 61 33 12
+
+</a>
+
+</div>
+
+
+<div class="contact-item">
+
+<strong>
+💬 WhatsApp
+</strong>
+
+<a
+href="https://wa.me/22871670258"
+target="_blank">
+
+71 67 02 58
+
+</a>
+
+</div>
+
+
+<div class="contact-item">
+
+<strong>
+✉️ Email
+</strong>
+
+<a
+href="mailto:lemonmoise1@gmail.com">
+
+lemonmoise1@gmail.com
+
+</a>
+
+</div>
+
+
+<div class="social">
+
+<a
+href="https://www.facebook.com/walter.obrian.71697"
+target="_blank"
+rel="noopener noreferrer">
+
+Facebook
+
+</a>
+
+
+<a
+href="https://wa.me/22871670258"
+target="_blank">
+
+WhatsApp
+
+</a>
+
+
+<a
+href="mailto:lemonmoise1@gmail.com">
+
+Email
+
+</a>
+
+</div>
+
+</div>
+
+
+<!-- FORMULAIRE -->
+
+<form
+class="contact-form"
+id="contactForm">
+
+
+<input
+type="text"
+id="nom"
+placeholder="Votre nom"
+required>
+
+
+<input
+type="email"
+id="email"
+placeholder="Votre adresse e-mail"
+required>
+
+
+<input
+type="tel"
+id="telephone"
+placeholder="Votre téléphone">
+
+
+<select
+id="service"
+required>
+
+<option value="">
+
+Choisissez un service
+
+</option>
+
+<option>
+Réseaux informatiques
+</option>
+
+<option>
+Vidéosurveillance
+</option>
+
+<option>
+Sécurité incendie
+</option>
+
+<option>
+Système d'alarme
+</option>
+
+<option>
+Électricité
+</option>
+
+<option>
+Électronique
+</option>
+
+<option>
+Informatique / Création web
+</option>
+
+<option>
+Domotique
+</option>
+
+<option>
+Énergie solaire
+</option>
+
+<option>
+Autre
+</option>
+
+</select>
+
+
+<textarea
+id="projet"
+placeholder="Décrivez votre projet..."
+required></textarea>
+
+
+<button
+class="btn btn-whatsapp"
+type="submit">
+
+💬
