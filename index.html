@@ -2,1686 +2,1086 @@
 <html lang="fr">
 
 <head>
+<meta charset="UTF-8">
 
-    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+<title>Moïse Tech & Énergie | Technologie, Sécurité & Énergie</title>
 
-    <title>
-        Moïse Tech & Énergie | Réseaux, Sécurité, Électricité & Informatique
-    </title>
+<meta name="description"
+content="Moïse Tech & Énergie : réseaux informatiques, vidéosurveillance, alarmes, sécurité incendie, électricité, électronique, domotique, énergie solaire et boutique en ligne.">
 
-    <meta name="description"
-          content="Moïse Tech & Énergie propose des solutions professionnelles en réseaux informatiques, vidéosurveillance, sécurité incendie, alarmes, électricité, électronique, domotique, énergie solaire et création de sites web.">
+<meta name="keywords"
+content="Moïse Tech, vidéosurveillance, caméra, réseau informatique, RJ45, électricité, électronique, Togo, Lomé, boutique">
 
-    <meta name="keywords"
-          content="Moïse Tech, réseaux informatiques, vidéosurveillance, sécurité incendie, alarme, électricité, électronique, domotique, énergie solaire, création site web, maintenance informatique, Togo, Lomé">
-
-    <meta name="author"
-          content="LEMON ESSO-DINAM MOÏSE">
-
-    <meta name="robots"
-          content="index, follow">
-
+<meta name="author"
+content="LEMON ESSO-DINAM MOÏSE">
 
 <style>
 
-/* ================================================= */
-/* COULEURS */
-/* ================================================= */
+/* =====================================================
+   COULEURS
+===================================================== */
 
-:root {
-
-    --noir: #05090f;
-    --noir2: #0b1420;
-
-    --bleu: #008cff;
-    --bleu-clair: #00c3ff;
-
-    --or: #ffc400;
-
-    --blanc: #ffffff;
-
-    --gris: #aeb8c4;
-
-    --vert: #25d366;
-
-    --card: #101c29;
-
-    --border: #24303d;
-
+:root{
+    --noir:#05090f;
+    --noir2:#08111d;
+    --card:#101c29;
+    --bleu:#008cff;
+    --bleu2:#00c3ff;
+    --or:#ffc400;
+    --blanc:#ffffff;
+    --gris:#aeb8c4;
+    --vert:#25d366;
+    --rouge:#ff4d4d;
+    --border:#24303d;
 }
 
+/* =====================================================
+   RESET
+===================================================== */
 
-/* ================================================= */
-/* RESET */
-/* ================================================= */
-
-* {
-
-    margin: 0;
-    padding: 0;
-
-    box-sizing: border-box;
-
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-
-html {
-
-    scroll-behavior: smooth;
-
+html{
+    scroll-behavior:smooth;
 }
 
-
-body {
-
-    font-family: Arial, sans-serif;
-
-    background: var(--noir);
-
-    color: var(--blanc);
-
-    line-height: 1.6;
-
+body{
+    font-family:Arial,sans-serif;
+    background:var(--noir);
+    color:white;
+    line-height:1.6;
 }
 
-
-a {
-
-    text-decoration: none;
-
-    color: inherit;
-
+a{
+    text-decoration:none;
+    color:inherit;
 }
 
-
-img {
-
-    width: 100%;
-
-    display: block;
-
+img{
+    width:100%;
+    display:block;
 }
 
-
-.container {
-
-    width: 90%;
-
-    max-width: 1200px;
-
-    margin: auto;
-
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
 }
 
+/* =====================================================
+   BOUTONS
+===================================================== */
 
-/* ================================================= */
-/* HEADER */
-/* ================================================= */
+.btn{
+    display:inline-block;
+    padding:13px 20px;
+    border:none;
+    border-radius:7px;
+    background:var(--or);
+    color:#05090f;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
 
-header {
+.btn:hover{
+    transform:translateY(-3px);
+    background:white;
+}
 
-    position: fixed;
+.btn-blue{
+    background:var(--bleu);
+    color:white;
+}
 
-    top: 0;
-    left: 0;
+.btn-blue:hover{
+    background:var(--bleu2);
+}
 
-    width: 100%;
+.btn-green{
+    background:var(--vert);
+    color:white;
+}
 
-    z-index: 1000;
+.btn-danger{
+    background:var(--rouge);
+    color:white;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(5,9,15,.97);
+    border-bottom:1px solid var(--border);
+}
+
+.nav{
+    min-height:75px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo-icon{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    background:var(--or);
+    color:#05090f;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:22px;
+    font-weight:bold;
+}
+
+.logo-text strong{
+    display:block;
+}
+
+.logo-text span{
+    color:var(--or);
+    font-size:12px;
+    font-weight:bold;
+}
+
+.menu{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.menu a{
+    color:var(--gris);
+    font-size:14px;
+}
+
+.menu a:hover{
+    color:var(--or);
+}
+
+.menu-button{
+    display:none;
+    background:none;
+    border:0;
+    color:white;
+    font-size:28px;
+}
+
+/* =====================================================
+   PANIER HEADER
+===================================================== */
+
+.cart-button{
+    position:relative;
+    background:var(--or);
+    color:#05090f !important;
+    padding:9px 14px;
+    border-radius:7px;
+    font-weight:bold;
+}
+
+.cart-count{
+    position:absolute;
+    top:-9px;
+    right:-8px;
+    width:23px;
+    height:23px;
+    border-radius:50%;
+    background:var(--rouge);
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:12px;
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding-top:75px;
 
     background:
-        rgba(5, 9, 15, .96);
-
-    border-bottom:
-        1px solid var(--border);
-
-    backdrop-filter:
-        blur(10px);
-
+    radial-gradient(
+        circle at 80% 40%,
+        rgba(0,140,255,.25),
+        transparent 35%
+    ),
+    linear-gradient(
+        120deg,
+        #05090f,
+        #071a2d
+    );
 }
-
-
-.nav {
-
-    min-height: 75px;
 
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
+.hero-content{
+    max-width:780px;
 }
-
-
-/* ================================================= */
-/* LOGO */
-/* ================================================= */
-
-.logo {
-
-    display: flex;
 
-    align-items: center;
-
-    gap: 10px;
-
+.small-title{
+    color:var(--or);
+    font-size:14px;
+    letter-spacing:2px;
+    font-weight:bold;
+    margin-bottom:18px;
 }
-
-
-.logo-icon {
-
-    width: 42px;
-
-    height: 42px;
-
-    background: var(--or);
-
-    color: var(--noir);
-
-    border-radius: 50%;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    font-size: 22px;
-
-    font-weight: bold;
 
+.hero h1{
+    font-size:clamp(42px,7vw,75px);
+    line-height:1.05;
+    margin-bottom:25px;
 }
 
-
-.logo-text strong {
-
-    display: block;
-
-    font-size: 18px;
-
+.hero h1 span{
+    color:var(--or);
 }
-
-
-.logo-text span {
 
-    color: var(--or);
-
-    font-size: 12px;
-
-    font-weight: bold;
-
+.hero p{
+    color:var(--gris);
+    font-size:18px;
+    margin-bottom:30px;
 }
-
-
-/* ================================================= */
-/* MENU */
-/* ================================================= */
-
-.menu {
-
-    display: flex;
 
-    align-items: center;
-
-    gap: 22px;
-
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
 }
-
 
-.menu a {
+/* =====================================================
+   SECTIONS
+===================================================== */
 
-    color: var(--gris);
-
-    font-size: 14px;
-
-    transition: .3s;
-
+section{
+    padding:100px 0;
 }
-
 
-.menu a:hover {
-
-    color: var(--or);
-
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
 }
-
-
-.menu-button {
-
-    display: none;
-
-    background: none;
-
-    border: none;
 
-    color: white;
-
-    font-size: 28px;
-
-    cursor: pointer;
-
+.section-title small{
+    color:var(--or);
+    letter-spacing:2px;
+    font-weight:bold;
 }
-
-
-/* ================================================= */
-/* BOUTONS */
-/* ================================================= */
-
-.btn {
-
-    display: inline-block;
-
-    padding: 14px 22px;
-
-    background: var(--or);
-
-    color: var(--noir);
-
-    border-radius: 6px;
-
-    font-weight: bold;
-
-    transition: .3s;
 
-    border: none;
-
-    cursor: pointer;
-
+.section-title h2{
+    font-size:42px;
+    margin:10px 0;
 }
-
 
-.btn:hover {
-
-    transform: translateY(-3px);
-
-    background: white;
-
+.section-title p{
+    color:var(--gris);
 }
-
 
-.btn-blue {
+/* =====================================================
+   ABOUT
+===================================================== */
 
-    background: var(--bleu);
-
-    color: white;
-
+.about{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
 }
-
 
-.btn-blue:hover {
-
-    background: var(--bleu-clair);
-
+.about-photo{
+    height:500px;
+    border:2px solid var(--or);
+    border-radius:15px;
+    overflow:hidden;
 }
-
-
-.btn-whatsapp {
 
-    background: var(--vert);
-
-    color: white;
-
+.about-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
 }
-
 
-.btn-whatsapp:hover {
-
-    background: #20b95a;
-
+.about h2{
+    font-size:40px;
+    margin-bottom:20px;
 }
-
-
-/* ================================================= */
-/* HERO */
-/* ================================================= */
-
-.hero {
-
-    min-height: 100vh;
-
-    display: flex;
-
-    align-items: center;
-
-    padding-top: 75px;
-
-    background:
 
-        radial-gradient(
-
-            circle at 80% 40%,
-
-            rgba(0, 140, 255, .25),
-
-            transparent 35%
-
-        ),
-
-        linear-gradient(
-
-            120deg,
-
-            #05090f,
-
-            #071a2d
-
-        );
-
+.about p{
+    color:var(--gris);
+    margin-bottom:15px;
 }
 
-
-.hero-content {
-
-    max-width: 780px;
-
+.about ul{
+    list-style:none;
+    margin:25px 0;
 }
-
 
-.small-title {
-
-    color: var(--or);
-
-    font-size: 14px;
-
-    letter-spacing: 2px;
-
-    font-weight: bold;
-
-    margin-bottom: 20px;
-
+.about li{
+    margin-bottom:10px;
+    color:var(--gris);
 }
 
-
-.hero h1 {
-
-    font-size:
-
-        clamp(40px, 7vw, 75px);
-
-    line-height: 1.05;
-
-    margin-bottom: 25px;
-
+.about li::before{
+    content:"✓";
+    color:var(--or);
+    margin-right:10px;
+    font-weight:bold;
 }
-
 
-.hero h1 span {
+/* =====================================================
+   SERVICES
+===================================================== */
 
-    color: var(--or);
-
+#services{
+    background:var(--noir2);
 }
-
-
-.hero p {
-
-    color: var(--gris);
-
-    font-size: 18px;
-
-    max-width: 700px;
-
-    margin-bottom: 30px;
 
+.services{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
 }
 
-
-.hero-buttons {
-
-    display: flex;
-
-    gap: 15px;
-
-    flex-wrap: wrap;
-
+.service{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:12px;
+    overflow:hidden;
+    transition:.3s;
 }
-
-
-/* ================================================= */
-/* SECTIONS */
-/* ================================================= */
 
-section {
-
-    padding: 100px 0;
-
+.service:hover{
+    transform:translateY(-7px);
+    border-color:var(--or);
 }
-
-
-.section-title {
-
-    text-align: center;
-
-    margin-bottom: 50px;
 
+.service-image{
+    height:220px;
+    overflow:hidden;
 }
 
-
-.section-title small {
-
-    color: var(--or);
-
-    font-weight: bold;
-
-    letter-spacing: 2px;
-
+.service-image img{
+    height:100%;
+    object-fit:cover;
 }
-
-
-.section-title h2 {
 
-    font-size: 42px;
-
-    margin: 10px 0;
-
+.service-content{
+    padding:25px;
 }
-
-
-.section-title p {
-
-    color: var(--gris);
-
-    max-width: 700px;
-
-    margin: auto;
 
+.service-icon{
+    font-size:38px;
 }
-
-
-/* ================================================= */
-/* À PROPOS */
-/* ================================================= */
-
-.about {
-
-    display: grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    gap: 60px;
-
-    align-items: center;
 
+.service h3{
+    font-size:23px;
+    margin:10px 0;
 }
 
-
-/* PHOTO DU FONDATEUR */
-
-.about-photo {
-
-    height: 500px;
-
-    border: 2px solid var(--or);
-
-    border-radius: 15px;
-
-    overflow: hidden;
-
-    background: #07111d;
-
-    box-shadow:
-        0 20px 50px rgba(0,0,0,.35);
-
+.service-description{
+    color:var(--gris);
+    margin-bottom:15px;
 }
-
-
-.about-photo img {
-
-    width: 100%;
-
-    height: 100%;
 
-    object-fit: cover;
-
-    object-position: center 15%;
-
+.service-list{
+    list-style:none;
+    margin-bottom:20px;
 }
-
 
-.about h2 {
-
-    font-size: 42px;
-
-    margin: 10px 0 20px;
-
+.service-list li{
+    color:#d5dce4;
+    font-size:14px;
+    margin-bottom:7px;
 }
-
 
-.about p {
-
-    color: var(--gris);
-
-    margin-bottom: 15px;
-
+.service-list li::before{
+    content:"✓";
+    color:var(--or);
+    margin-right:8px;
 }
 
+/* =====================================================
+   BOUTIQUE
+===================================================== */
 
-.about ul {
-
-    list-style: none;
-
-    margin: 25px 0;
-
+#boutique{
+    background:#07111d;
 }
-
 
-.about li {
-
-    margin-bottom: 12px;
-
-    color: var(--gris);
-
+.shop-info{
+    text-align:center;
+    color:var(--gris);
+    max-width:750px;
+    margin:0 auto 40px;
 }
-
-
-.about li::before {
-
-    content: "✓";
 
-    color: var(--or);
-
-    font-weight: bold;
-
-    margin-right: 10px;
-
+.shop-categories{
+    display:flex;
+    gap:10px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-bottom:35px;
 }
-
-
-/* ================================================= */
-/* SERVICES */
-/* ================================================= */
-
-#services {
-
-    background: var(--noir2);
 
+.category-btn{
+    padding:10px 18px;
+    border:1px solid var(--border);
+    background:var(--card);
+    color:white;
+    border-radius:30px;
+    cursor:pointer;
 }
 
-
-.services {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(2, 1fr);
-
-    gap: 25px;
-
+.category-btn:hover,
+.category-btn.active{
+    background:var(--or);
+    color:#05090f;
 }
-
-
-.service {
 
-    background: var(--card);
-
-    border: 1px solid var(--border);
-
-    border-radius: 12px;
-
-    overflow: hidden;
-
-    transition: .3s;
-
+.products{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
 }
-
-
-.service:hover {
 
-    transform: translateY(-8px);
-
-    border-color: var(--or);
-
-    box-shadow:
-        0 15px 35px rgba(0,0,0,.25);
-
+.product{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:12px;
+    overflow:hidden;
+    transition:.3s;
 }
-
-
-.service-image {
-
-    height: 220px;
 
-    overflow: hidden;
-
-    background: #071a2d;
-
+.product:hover{
+    transform:translateY(-6px);
+    border-color:var(--or);
 }
-
-
-.service-image img {
-
-    height: 100%;
-
-    object-fit: cover;
-
-    transition: .5s;
 
+.product-image{
+    height:200px;
+    overflow:hidden;
+    background:#071a2d;
 }
 
-
-.service:hover .service-image img {
-
-    transform: scale(1.07);
-
+.product-image img{
+    height:100%;
+    object-fit:cover;
+    transition:.4s;
 }
 
-
-.service-content {
-
-    padding: 28px;
-
+.product:hover img{
+    transform:scale(1.06);
 }
-
 
-.service-icon {
-
-    font-size: 38px;
-
-    margin-bottom: 12px;
-
+.product-content{
+    padding:20px;
 }
-
-
-.service h3 {
-
-    font-size: 23px;
-
-    margin-bottom: 12px;
 
+.product-category{
+    color:var(--or);
+    font-size:12px;
+    font-weight:bold;
+    text-transform:uppercase;
 }
 
-
-.service-description {
-
-    color: var(--gris);
-
-    font-size: 15px;
-
-    margin-bottom: 18px;
-
+.product h3{
+    margin:7px 0;
 }
-
 
-.service-list {
-
-    list-style: none;
-
-    margin-bottom: 22px;
-
+.product p{
+    color:var(--gris);
+    font-size:14px;
+    margin-bottom:18px;
 }
-
-
-.service-list li {
-
-    color: #d5dce4;
-
-    font-size: 14px;
 
-    margin-bottom: 8px;
-
+.product-actions{
+    display:flex;
+    gap:8px;
 }
-
-
-.service-list li::before {
-
-    content: "✓";
-
-    color: var(--or);
-
-    font-weight: bold;
-
-    margin-right: 8px;
 
+.product-actions button{
+    flex:1;
 }
 
+/* =====================================================
+   PANIER
+===================================================== */
 
-/* ================================================= */
-/* AVANTAGES */
-/* ================================================= */
-
-#avantages {
-
-    background: #07111d;
-
+.cart-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.7);
+    z-index:3000;
+    display:none;
 }
-
-
-.advantages {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(4, 1fr);
 
-    gap: 20px;
-
+.cart-overlay.show{
+    display:block;
 }
-
-
-.advantage {
-
-    text-align: center;
-
-    background: var(--card);
-
-    border: 1px solid var(--border);
 
-    padding: 30px 20px;
-
-    border-radius: 10px;
-
-    transition: .3s;
-
+.cart-panel{
+    position:absolute;
+    right:0;
+    top:0;
+    height:100%;
+    width:min(450px,100%);
+    background:var(--noir2);
+    padding:25px;
+    overflow-y:auto;
 }
-
-
-.advantage:hover {
-
-    transform: translateY(-6px);
-
-    border-color: var(--or);
 
+.cart-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid var(--border);
+    padding-bottom:15px;
+    margin-bottom:20px;
 }
 
-
-.advantage-icon {
-
-    font-size: 40px;
-
-    margin-bottom: 15px;
-
+.close-cart{
+    background:none;
+    border:0;
+    color:white;
+    font-size:28px;
+    cursor:pointer;
 }
-
-
-.advantage h3 {
-
-    margin-bottom: 10px;
 
+.cart-item{
+    display:flex;
+    gap:12px;
+    padding:15px 0;
+    border-bottom:1px solid var(--border);
 }
 
-
-.advantage p {
-
-    color: var(--gris);
-
-    font-size: 14px;
-
+.cart-item img{
+    width:70px;
+    height:70px;
+    object-fit:cover;
+    border-radius:8px;
 }
-
-
-/* ================================================= */
-/* PROJETS */
-/* ================================================= */
-
-#projets {
 
-    background: var(--noir2);
-
+.cart-item-info{
+    flex:1;
 }
-
-
-.projects {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 20px;
 
+.cart-item-info h4{
+    font-size:15px;
 }
-
-
-.project {
-
-    background: var(--card);
-
-    border: 1px solid var(--border);
-
-    border-radius: 10px;
-
-    overflow: hidden;
-
-    transition: .3s;
 
+.cart-item-info p{
+    color:var(--gris);
+    font-size:13px;
 }
 
-
-.project:hover {
-
-    transform: translateY(-7px);
-
-    border-color: var(--or);
-
+.quantity{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-top:7px;
 }
-
-
-.project-image {
-
-    height: 190px;
 
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    background: #071a2d;
-
-    font-size: 60px;
-
+.quantity button{
+    width:28px;
+    height:28px;
+    background:#1b2734;
+    border:1px solid var(--border);
+    color:white;
+    cursor:pointer;
 }
-
-
-.project-content {
 
-    padding: 20px;
-
+.remove-item{
+    background:none;
+    border:0;
+    color:var(--rouge);
+    cursor:pointer;
 }
-
-
-.project-content p {
-
-    color: var(--gris);
-
-    font-size: 14px;
-
-    margin-top: 8px;
 
+.cart-footer{
+    margin-top:25px;
 }
 
-
-/* ================================================= */
-/* COMPÉTENCES */
-/* ================================================= */
-
-.skills {
-
-    display: grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    gap: 60px;
-
+.cart-note{
+    background:#101c29;
+    border:1px solid var(--border);
+    padding:15px;
+    border-radius:8px;
+    color:var(--gris);
+    margin-bottom:15px;
 }
-
 
-.skill {
+/* =====================================================
+   COMMANDE
+===================================================== */
 
-    margin-bottom: 25px;
-
+.checkout{
+    margin-top:25px;
+    display:none;
 }
-
-
-.skill-info {
 
-    display: flex;
-
-    justify-content: space-between;
-
-    margin-bottom: 8px;
-
+.checkout.show{
+    display:block;
 }
-
 
-.skill-info span {
-
-    color: var(--gris);
-
+.checkout h3{
+    margin-bottom:15px;
+    color:var(--or);
 }
-
 
-.skill-info strong {
-
-    color: var(--or);
-
+.checkout input,
+.checkout textarea,
+.checkout select{
+    width:100%;
+    padding:13px;
+    margin-bottom:12px;
+    background:#08111d;
+    color:white;
+    border:1px solid var(--border);
+    border-radius:6px;
 }
-
-
-.progress {
 
-    height: 8px;
-
-    background: #1b2734;
-
-    border-radius: 10px;
-
-    overflow: hidden;
-
+.payment-methods{
+    display:grid;
+    gap:10px;
+    margin:15px 0;
 }
-
-
-.progress span {
-
-    display: block;
-
-    height: 100%;
-
-    background:
-
-        linear-gradient(
-
-            90deg,
-
-            var(--bleu),
-
-            var(--or)
 
-        );
-
+.payment-method{
+    padding:13px;
+    background:#08111d;
+    border:1px solid var(--border);
+    border-radius:7px;
+    cursor:pointer;
 }
-
-
-/* ================================================= */
-/* LOCALISATION */
-/* ================================================= */
 
-#localisation {
-
-    background: var(--noir2);
-
+.payment-method:hover{
+    border-color:var(--or);
 }
-
-
-.location {
 
-    display: grid;
-
-    grid-template-columns:
-        1fr 1.5fr;
-
-    gap: 35px;
-
+.payment-method input{
+    width:auto;
+    margin-right:8px;
 }
-
-
-.location-info {
-
-    background: var(--card);
-
-    border: 1px solid var(--border);
 
-    border-radius: 12px;
+/* =====================================================
+   AVANTAGES
+===================================================== */
 
-    padding: 35px;
-
+#avantages{
+    background:var(--noir2);
 }
-
-
-.location-info h2 {
 
-    font-size: 34px;
-
-    margin: 10px 0 20px;
-
+.advantages{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
 }
-
 
-.location-info p {
-
-    color: var(--gris);
-
-    margin-bottom: 20px;
-
+.advantage{
+    text-align:center;
+    background:var(--card);
+    border:1px solid var(--border);
+    padding:30px 20px;
+    border-radius:10px;
 }
 
-
-.location-item {
-
-    margin-bottom: 18px;
-
+.advantage-icon{
+    font-size:40px;
+    margin-bottom:15px;
 }
-
 
-.location-item strong {
-
-    color: var(--or);
-
-    display: block;
-
+.advantage p{
+    color:var(--gris);
+    font-size:14px;
 }
-
-
-.map {
-
-    min-height: 400px;
-
-    border-radius: 12px;
 
-    overflow: hidden;
+/* =====================================================
+   PROJETS
+===================================================== */
 
-    border: 1px solid var(--border);
-
+.projects{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
 }
-
-
-.map iframe {
-
-    width: 100%;
-
-    height: 100%;
-
-    min-height: 400px;
-
-    border: 0;
 
+.project{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:10px;
+    overflow:hidden;
 }
 
-
-/* ================================================= */
-/* CONTACT */
-/* ================================================= */
-
-#contact {
-
-    background: var(--noir);
-
+.project-image{
+    height:190px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#071a2d;
+    font-size:60px;
 }
-
-
-.contact {
-
-    display: grid;
 
-    grid-template-columns:
-        1fr 1fr;
-
-    gap: 60px;
-
+.project-content{
+    padding:20px;
 }
-
 
-.contact h2 {
+.project-content p{
+    color:var(--gris);
+    font-size:14px;
+}
 
-    font-size: 42px;
+/* =====================================================
+   COMPETENCES
+===================================================== */
 
-    margin: 10px 0 20px;
+.skills{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+}
 
+.skill{
+    margin-bottom:25px;
 }
 
+.skill-info{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:8px;
+}
 
-.contact-intro {
+.skill-info span{
+    color:var(--gris);
+}
 
-    color: var(--gris);
+.skill-info strong{
+    color:var(--or);
+}
 
-    margin-bottom: 30px;
+.progress{
+    height:8px;
+    background:#1b2734;
+    border-radius:10px;
+    overflow:hidden;
+}
 
+.progress span{
+    display:block;
+    height:100%;
+    background:linear-gradient(90deg,var(--bleu),var(--or));
 }
 
+/* =====================================================
+   LOCALISATION
+===================================================== */
 
-.contact-item {
+#localisation{
+    background:var(--noir2);
+}
 
-    margin-bottom: 20px;
+.location{
+    display:grid;
+    grid-template-columns:1fr 1.5fr;
+    gap:35px;
+}
 
+.location-info{
+    background:var(--card);
+    border:1px solid var(--border);
+    padding:35px;
+    border-radius:12px;
 }
 
+.location-info p{
+    color:var(--gris);
+    margin-bottom:20px;
+}
 
-.contact-item strong {
+.location-item{
+    margin-bottom:18px;
+}
 
-    color: var(--or);
+.location-item strong{
+    color:var(--or);
+    display:block;
+}
 
-    display: block;
+.map{
+    min-height:400px;
+    border-radius:12px;
+    overflow:hidden;
+}
 
+.map iframe{
+    width:100%;
+    height:400px;
+    border:0;
 }
 
+/* =====================================================
+   CONTACT
+===================================================== */
 
-.contact-form {
+#contact{
+    background:var(--noir);
+}
 
-    background: var(--card);
+.contact{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+}
 
-    padding: 30px;
+.contact h2{
+    font-size:42px;
+    margin:10px 0 20px;
+}
 
-    border-radius: 10px;
+.contact-intro{
+    color:var(--gris);
+    margin-bottom:30px;
+}
 
-    border: 1px solid var(--border);
+.contact-item{
+    margin-bottom:20px;
+}
 
+.contact-item strong{
+    color:var(--or);
+    display:block;
 }
 
+.contact-form{
+    background:var(--card);
+    padding:30px;
+    border-radius:10px;
+    border:1px solid var(--border);
+}
 
 .contact-form input,
 .contact-form textarea,
-.contact-form select {
-
-    width: 100%;
-
-    padding: 15px;
-
-    margin-bottom: 15px;
-
-    background: #08111d;
-
-    border: 1px solid #304050;
-
-    color: white;
-
-    border-radius: 5px;
-
-    outline: none;
-
+.contact-form select{
+    width:100%;
+    padding:15px;
+    margin-bottom:15px;
+    background:#08111d;
+    border:1px solid #304050;
+    color:white;
+    border-radius:5px;
 }
 
-
-.contact-form textarea {
-
-    height: 150px;
-
-    resize: vertical;
-
+.contact-form textarea{
+    height:150px;
 }
 
+/* =====================================================
+   CHAT
+===================================================== */
 
-.contact-form select {
-
-    cursor: pointer;
-
+.chat-float{
+    position:fixed;
+    right:22px;
+    bottom:22px;
+    z-index:2500;
 }
 
-
-.contact-form input:focus,
-.contact-form textarea:focus,
-.contact-form select:focus {
-
-    border-color: var(--or);
-
+.chat-toggle{
+    width:62px;
+    height:62px;
+    border:0;
+    border-radius:50%;
+    background:var(--vert);
+    color:white;
+    font-size:28px;
+    cursor:pointer;
+    box-shadow:0 8px 25px rgba(0,0,0,.4);
 }
 
-
-.contact-form button {
-
-    width: 100%;
-
+.chat-panel{
+    position:absolute;
+    right:0;
+    bottom:75px;
+    width:310px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:15px;
+    overflow:hidden;
+    display:none;
 }
 
-
-/* ================================================= */
-/* RÉSEAUX SOCIAUX */
-/* ================================================= */
-
-.social {
-
-    display: flex;
-
-    gap: 12px;
-
-    margin-top: 30px;
-
-    flex-wrap: wrap;
-
+.chat-panel.show{
+    display:block;
 }
 
-
-.social a {
-
-    min-width: 45px;
-
-    height: 45px;
-
-    padding: 0 16px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    border-radius: 50px;
-
-    background: var(--card);
-
-    border: 1px solid #304050;
-
-    transition: .3s;
-
-    font-weight: bold;
-
+.chat-header{
+    background:linear-gradient(135deg,var(--bleu),var(--bleu2));
+    padding:18px;
 }
 
-
-.social a:hover {
-
-    background: var(--or);
-
-    color: black;
-
-    transform: translateY(-4px);
-
+.chat-body{
+    padding:15px;
 }
 
-
-/* ================================================= */
-/* BOUTON DISCUSSION */
-/* ================================================= */
-
-.chat-float {
-
-    position: fixed;
-
-    right: 22px;
-
-    bottom: 22px;
-
-    z-index: 2000;
-
+.chat-body p{
+    color:var(--gris);
+    font-size:14px;
+    margin-bottom:12px;
 }
 
-
-.chat-toggle {
-
-    width: 62px;
-
-    height: 62px;
-
-    border: none;
-
-    border-radius: 50%;
-
-    background: var(--vert);
-
-    color: white;
-
-    font-size: 28px;
-
-    cursor: pointer;
-
-    box-shadow:
-        0 8px 25px rgba(0,0,0,.4);
-
-    transition: .3s;
-
+.chat-option{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:13px;
+    margin:8px 0;
+    background:#08111d;
+    border:1px solid var(--border);
+    border-radius:10px;
 }
 
-
-.chat-toggle:hover {
-
-    transform: scale(1.08);
-
+.chat-option:hover{
+    border-color:var(--or);
 }
 
+/* =====================================================
+   FOOTER
+===================================================== */
 
-.chat-panel {
-
-    position: absolute;
-
-    right: 0;
-
-    bottom: 75px;
-
-    width: 310px;
-
-    background: var(--card);
-
-    border: 1px solid #304050;
-
-    border-radius: 16px;
-
-    box-shadow:
-        0 15px 45px rgba(0,0,0,.5);
-
-    overflow: hidden;
-
-    display: none;
-
+footer{
+    padding:50px 0 20px;
+    background:#03060a;
 }
 
-
-.chat-panel.show {
-
-    display: block;
-
+.footer-content{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:40px;
 }
 
-
-.chat-header {
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--bleu),
-            var(--bleu-clair)
-        );
-
-    padding: 18px;
-
+footer h3{
+    color:var(--or);
+    margin-bottom:15px;
 }
-
-
-.chat-header strong {
-
-    display: block;
-
-    font-size: 18px;
-
-}
-
-
-.chat-header small {
-
-    opacity: .9;
-
-}
-
-
-.chat-body {
-
-    padding: 15px;
-
-}
-
-
-.chat-body p {
-
-    color: var(--gris);
-
-    font-size: 14px;
-
-    margin-bottom: 12px;
-
-}
-
-
-.chat-option {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 12px;
-
-    padding: 13px;
-
-    margin: 8px 0;
-
-    background: #08111d;
-
-    border: 1px solid #304050;
-
-    border-radius: 10px;
-
-    transition: .25s;
-
-}
-
-
-.chat-option:hover {
-
-    border-color: var(--or);
-
-    transform: translateX(3px);
-
-}
-
-
-.chat-option .ico {
-
-    font-size: 24px;
-
-}
-
-
-.chat-option strong {
-
-    display: block;
-
-}
-
-
-.chat-option small {
-
-    color: var(--gris);
-
-}
-
-
-.chat-close {
-
-    position: absolute;
-
-    right: 12px;
-
-    top: 10px;
-
-    border: none;
-
-    background: transparent;
-
-    color: white;
-
-    font-size: 22px;
-
-    cursor: pointer;
-
-}
-
-
-/* ================================================= */
-/* FOOTER */
-/* ================================================= */
-
-footer {
-
-    padding: 50px 0 20px;
-
-    background: #03060a;
-
-}
-
-
-.footer-content {
-
-    display: grid;
-
-    grid-template-columns:
-        2fr 1fr 1fr;
-
-    gap: 40px;
-
-}
-
 
 footer p,
-footer a {
-
-    color: var(--gris);
-
-    font-size: 14px;
-
+footer a{
+    color:var(--gris);
+    font-size:14px;
 }
 
-
-footer h3 {
-
-    color: var(--or);
-
-    margin-bottom: 15px;
-
+footer a{
+    display:block;
+    margin-bottom:8px;
 }
 
-
-footer a {
-
-    display: block;
-
-    margin-bottom: 8px;
-
+.copyright{
+    text-align:center;
+    border-top:1px solid var(--border);
+    margin-top:40px;
+    padding-top:20px;
+    color:var(--gris);
+    font-size:13px;
 }
 
+/* =====================================================
+   MOBILE
+===================================================== */
 
-.copyright {
+@media(max-width:900px){
 
-    text-align: center;
-
-    border-top: 1px solid var(--border);
-
-    margin-top: 40px;
-
-    padding-top: 20px;
-
-}
-
-
-/* ================================================= */
-/* ANIMATION */
-/* ================================================= */
-
-.fade-in {
-
-    animation:
-        fadeIn 1s ease;
-
-}
-
-
-@keyframes fadeIn {
-
-    from {
-
-        opacity: 0;
-
-        transform:
-            translateY(20px);
-
+    .products{
+        grid-template-columns:repeat(2,1fr);
     }
-
-    to {
-
-        opacity: 1;
-
-        transform:
-            translateY(0);
-
-    }
-
-}
-
-
-/* ================================================= */
-/* MOBILE */
-/* ================================================= */
-
-@media (max-width: 900px) {
 
     .services,
     .advantages,
-    .projects {
-
-        grid-template-columns:
-            1fr 1fr;
-
+    .projects{
+        grid-template-columns:1fr 1fr;
     }
-
 
     .about,
     .skills,
     .contact,
     .location,
-    .footer-content {
-
-        grid-template-columns:
-            1fr;
-
+    .footer-content{
+        grid-template-columns:1fr;
     }
-
 }
 
+@media(max-width:700px){
 
-@media (max-width: 700px) {
-
-    .menu-button {
-
-        display: block;
-
+    .menu-button{
+        display:block;
     }
 
-
-    .menu {
-
-        position: absolute;
-
-        top: 75px;
-
-        left: 0;
-
-        width: 100%;
-
-        background: #08111d;
-
-        display: none;
-
-        flex-direction: column;
-
-        padding: 25px;
-
-        align-items: flex-start;
-
+    .menu{
+        position:absolute;
+        top:75px;
+        left:0;
+        width:100%;
+        background:#08111d;
+        display:none;
+        flex-direction:column;
+        padding:25px;
+        align-items:flex-start;
     }
 
-
-    .menu.show {
-
-        display: flex;
-
+    .menu.show{
+        display:flex;
     }
 
-
+    .products,
     .services,
     .advantages,
-    .projects {
-
-        grid-template-columns: 1fr;
-
+    .projects{
+        grid-template-columns:1fr;
     }
 
+    .hero h1{
+        font-size:43px;
+    }
 
-    .section-title h2,
+    .section-title h2{
+        font-size:32px;
+    }
+
     .about h2,
-    .contact h2 {
-
-        font-size: 32px;
-
+    .contact h2{
+        font-size:32px;
     }
-
-
-    .hero h1 {
-
-        font-size: 43px;
-
-    }
-
-
-    .about-photo {
-
-        height: 420px;
-
-    }
-
-
-    .chat-panel {
-
-        right: -5px;
-
-        width:
-            min(310px, calc(100vw - 35px));
-
-    }
-
 }
 
 </style>
-
 </head>
-
 
 <body>
 
-
-<!-- ================================================= -->
-<!-- HEADER -->
-<!-- ================================================= -->
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
 <header>
 
@@ -1689,70 +1089,35 @@ footer a {
 
 <a href="#accueil" class="logo">
 
-<div class="logo-icon">
-⚡
-</div>
+<div class="logo-icon">⚡</div>
 
 <div class="logo-text">
-
-<strong>
-MOÏSE
-</strong>
-
-<span>
-TECH & ÉNERGIE
-</span>
-
+<strong>MOÏSE</strong>
+<span>TECH & ÉNERGIE</span>
 </div>
 
 </a>
 
-
-<button
-class="menu-button"
-id="menuButton">
-
+<button class="menu-button" id="menuButton">
 ☰
-
 </button>
 
+<nav class="menu" id="menu">
 
-<nav
-class="menu"
-id="menu">
+<a href="#accueil">Accueil</a>
+<a href="#apropos">À propos</a>
+<a href="#services">Services</a>
+<a href="#boutique">Boutique</a>
+<a href="#projets">Réalisations</a>
+<a href="#competences">Compétences</a>
+<a href="#localisation">Localisation</a>
+<a href="#contact">Contact</a>
 
-<a href="#accueil">
-Accueil
-</a>
+<a href="#" class="cart-button" onclick="openCart();return false;">
 
-<a href="#apropos">
-À propos
-</a>
+🛒 Panier
 
-<a href="#services">
-Services
-</a>
-
-<a href="#projets">
-Réalisations
-</a>
-
-<a href="#competences">
-Compétences
-</a>
-
-<a href="#localisation">
-Localisation
-</a>
-
-<a href="#contact">
-Contact
-</a>
-
-<a href="#contact"
-class="btn">
-
-Devis gratuit
+<span class="cart-count" id="cartCount">0</span>
 
 </a>
 
@@ -1763,73 +1128,51 @@ Devis gratuit
 </header>
 
 
-<!-- ================================================= -->
-<!-- ACCUEIL -->
-<!-- ================================================= -->
+<!-- =====================================================
+     ACCUEIL
+===================================================== -->
 
-<section
-class="hero"
-id="accueil">
+<section class="hero" id="accueil">
 
 <div class="container">
 
-<div class="hero-content fade-in">
+<div class="hero-content">
 
 <div class="small-title">
-
-TECHNOLOGIE • ÉNERGIE •
-SÉCURITÉ • INNOVATION
-
+TECHNOLOGIE • ÉNERGIE • SÉCURITÉ • INNOVATION
 </div>
 
-
 <h1>
-
 Des solutions
-
-<span>
-technologiques
-</span>
-
+<span>technologiques</span>
 pour un avenir connecté.
-
 </h1>
-
 
 <p>
 
-Bienvenue chez
+Bienvenue chez <strong>Moïse Tech & Énergie</strong>.
 
-<strong>
-Moïse Tech & Énergie
-</strong>.
-
-Nous proposons des solutions modernes
-dans les domaines de l'informatique,
-des réseaux, de la sécurité électronique,
-de l'incendie, de l'électricité,
-de l'électronique, de la domotique
+Nous proposons des solutions modernes dans les domaines
+de l'informatique, des réseaux, de la sécurité électronique,
+de l'électricité, de l'électronique, de la domotique
 et de l'énergie.
 
 </p>
 
-
 <div class="hero-buttons">
 
-<a
-href="#services"
-class="btn">
-
+<a href="#services" class="btn">
 Découvrir nos services
-
 </a>
 
+<a href="#boutique" class="btn btn-blue">
+🛒 Visiter la boutique
+</a>
 
 <a
-href="https://wa.me/22871670258?text=Bonjour%20Mo%C3%AFse%20Tech%20%26%20%C3%89nergie%2C%20je%20souhaite%20avoir%20des%20informations."
+href="https://wa.me/22871670258?text=Bonjour%20Mo%C3%AFse%20Tech%20%26%20%C3%89nergie"
 target="_blank"
-rel="noopener"
-class="btn btn-blue">
+class="btn btn-green">
 
 💬 WhatsApp
 
@@ -1844,118 +1187,58 @@ class="btn btn-blue">
 </section>
 
 
-<!-- ================================================= -->
-<!-- FONDATEUR -->
-<!-- ================================================= -->
+<!-- =====================================================
+     À PROPOS
+===================================================== -->
 
 <section id="apropos">
 
 <div class="container about">
 
-
-<!-- PHOTO -->
-
 <div class="about-photo">
 
 <img
 src="images/fondateur.jpg"
-alt="LEMON ESSO-DINAM MOÏSE - Fondateur de Moïse Tech & Énergie">
+alt="LEMON ESSO-DINAM MOÏSE">
 
 </div>
-
-
-<!-- TEXTE -->
 
 <div>
 
 <div class="small-title">
-
 À PROPOS DU FONDATEUR
-
 </div>
 
-
 <h2>
-
-Technologie, sécurité
-et innovation au service
-de vos projets.
-
+Technologie, sécurité et innovation
+au service de vos projets.
 </h2>
 
-
 <p>
-
-Je suis
-
-<strong>
-LEMON ESSO-DINAM MOÏSE
-</strong>,
-
-fondateur de
-
-<strong>
-Moïse Tech & Énergie
-</strong>.
-
+Je suis <strong>LEMON ESSO-DINAM MOÏSE</strong>,
+fondateur de <strong>Moïse Tech & Énergie</strong>.
 </p>
 
-
 <p>
-
-Passionné par la technologie,
-l'informatique, les réseaux,
-l'électricité, l'électronique
-et les systèmes de sécurité,
-je propose des solutions adaptées
-aux besoins des particuliers,
+Passionné par la technologie, l'informatique,
+les réseaux, l'électricité, l'électronique
+et les systèmes de sécurité, je propose des
+solutions adaptées aux particuliers,
 commerces et entreprises.
-
 </p>
-
-
-<p>
-
-Mon objectif est de mettre la
-technologie au service des personnes
-et des entreprises à travers des
-installations fiables, modernes
-et adaptées à chaque projet.
-
-</p>
-
 
 <ul>
 
-<li>
-Installation et configuration professionnelle
-</li>
-
-<li>
-Solutions personnalisées
-</li>
-
-<li>
-Maintenance et dépannage
-</li>
-
-<li>
-Accompagnement du client
-</li>
-
-<li>
-Conseils techniques
-</li>
+<li>Installation professionnelle</li>
+<li>Solutions personnalisées</li>
+<li>Maintenance et dépannage</li>
+<li>Accompagnement du client</li>
+<li>Conseils techniques</li>
 
 </ul>
 
-
-<a
-href="#contact"
-class="btn">
-
+<a href="#contact" class="btn">
 Travaillons ensemble
-
 </a>
 
 </div>
@@ -1965,37 +1248,29 @@ Travaillons ensemble
 </section>
 
 
-<!-- ================================================= -->
-<!-- SERVICES -->
-<!-- ================================================= -->
+<!-- =====================================================
+     SERVICES
+===================================================== -->
 
 <section id="services">
 
 <div class="container">
 
-
 <div class="section-title">
 
-<small>
-NOS SERVICES
-</small>
+<small>NOS SERVICES</small>
 
-<h2>
-Des solutions complètes
-</h2>
+<h2>Des solutions complètes</h2>
 
 <p>
-Découvrez nos principaux domaines
-d'intervention.
+Découvrez nos principaux domaines d'intervention.
 </p>
 
 </div>
 
-
 <div class="services">
 
-
-<!-- RÉSEAUX -->
+<!-- SERVICE 1 -->
 
 <article class="service">
 
@@ -2003,61 +1278,35 @@ d'intervention.
 
 <img
 src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80"
-alt="Réseau informatique et baie serveur">
+alt="Réseau informatique">
 
 </div>
-
 
 <div class="service-content">
 
-<div class="service-icon">
-🌐
-</div>
+<div class="service-icon">🌐</div>
 
-
-<h3>
-Réseaux informatiques
-</h3>
-
+<h3>Réseaux informatiques</h3>
 
 <p class="service-description">
-
-Mise en place de réseaux fiables,
-performants et adaptés aux entreprises,
-bureaux, commerces et particuliers.
-
+Installation et configuration de réseaux fiables.
 </p>
-
 
 <ul class="service-list">
 
-<li>Installation de réseaux LAN</li>
-
-<li>Câblage réseau RJ45</li>
-
-<li>Installation de baies informatiques</li>
-
-<li>Panneaux de brassage</li>
-
-<li>Organisation des câbles</li>
-
-<li>Installation de switchs</li>
-
-<li>Configuration de routeurs</li>
-
-<li>Installation de points d'accès Wi-Fi</li>
-
-<li>Configuration réseau</li>
-
-<li>Sécurisation du réseau</li>
-
-<li>Maintenance et dépannage</li>
+<li>Réseaux LAN</li>
+<li>Câblage RJ45</li>
+<li>Baies informatiques</li>
+<li>Switchs</li>
+<li>Routeurs</li>
+<li>Wi-Fi</li>
+<li>Sécurisation réseau</li>
+<li>Maintenance</li>
 
 </ul>
 
-
 <a
-href="https://wa.me/22871670258?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20vos%20services%20de%20r%C3%A9seaux%20informatiques."
+href="https://wa.me/22871670258?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20vos%20services%20r%C3%A9seau."
 target="_blank"
 class="btn">
 
@@ -2070,79 +1319,7 @@ Demander un devis
 </article>
 
 
-<!-- INCENDIE -->
-
-<article class="service">
-
-<div class="service-image">
-
-<img
-src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80"
-alt="Système de sécurité incendie">
-
-</div>
-
-
-<div class="service-content">
-
-<div class="service-icon">
-🔥
-</div>
-
-
-<h3>
-Sécurité incendie
-</h3>
-
-
-<p class="service-description">
-
-Des solutions de détection et
-d'alerte destinées à améliorer
-la protection des personnes,
-des locaux et des équipements.
-
-</p>
-
-
-<ul class="service-list">
-
-<li>Centrales de détection incendie</li>
-
-<li>Détecteurs de fumée</li>
-
-<li>Détecteurs de chaleur</li>
-
-<li>Déclencheurs manuels</li>
-
-<li>Sirènes d'alarme</li>
-
-<li>Voyants et signalisation</li>
-
-<li>Câblage des systèmes incendie</li>
-
-<li>Installation et configuration</li>
-
-<li>Maintenance et contrôle</li>
-
-</ul>
-
-
-<a
-href="https://wa.me/22871670258?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20vos%20solutions%20de%20s%C3%A9curit%C3%A9%20incendie."
-target="_blank"
-class="btn">
-
-Demander un devis
-
-</a>
-
-</div>
-
-</article>
-
-
-<!-- VIDÉOSURVEILLANCE -->
+<!-- SERVICE 2 -->
 
 <article class="service">
 
@@ -2150,55 +1327,32 @@ Demander un devis
 
 <img
 src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1200&q=80"
-alt="Caméra de vidéosurveillance">
+alt="Vidéosurveillance">
 
 </div>
-
 
 <div class="service-content">
 
-<div class="service-icon">
-📹
-</div>
+<div class="service-icon">📹</div>
 
-
-<h3>
-Vidéosurveillance
-</h3>
-
+<h3>Vidéosurveillance</h3>
 
 <p class="service-description">
-
-Sécurisez votre maison,
-commerce ou entreprise grâce
-à des solutions de surveillance
-adaptées.
-
+Sécurisez votre maison, commerce ou entreprise.
 </p>
-
 
 <ul class="service-list">
 
 <li>Caméras IP</li>
-
 <li>Caméras Wi-Fi</li>
-
-<li>DVR et NVR</li>
-
+<li>DVR / NVR</li>
 <li>Installation intérieure</li>
-
 <li>Installation extérieure</li>
-
+<li>Surveillance smartphone</li>
 <li>Configuration réseau</li>
-
-<li>Surveillance à distance</li>
-
-<li>Consultation depuis smartphone</li>
-
-<li>Maintenance et dépannage</li>
+<li>Maintenance</li>
 
 </ul>
-
 
 <a
 href="https://wa.me/22871670258?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20une%20installation%20de%20vid%C3%A9osurveillance."
@@ -2214,68 +1368,43 @@ Demander un devis
 </article>
 
 
-<!-- ALARMES -->
+<!-- SERVICE 3 -->
 
 <article class="service">
 
 <div class="service-image">
 
 <img
-src="https://images.unsplash.com/photo-1558008258-3256797b43f3?auto=format&fit=crop&w=1200&q=80"
-alt="Système d'alarme de sécurité">
+src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80"
+alt="Sécurité incendie">
 
 </div>
-
 
 <div class="service-content">
 
-<div class="service-icon">
-🚨
-</div>
+<div class="service-icon">🔥</div>
 
-
-<h3>
-Alarmes & sécurité
-</h3>
-
+<h3>Sécurité incendie</h3>
 
 <p class="service-description">
-
-Renforcez la sécurité de vos
-locaux grâce à des systèmes
-d'alarme adaptés à votre environnement.
-
+Solutions de détection et d'alerte incendie.
 </p>
-
 
 <ul class="service-list">
 
-<li>Alarmes anti-intrusion</li>
-
-<li>Détecteurs de mouvement</li>
-
-<li>Détecteurs d'ouverture</li>
-
+<li>Détecteurs de fumée</li>
+<li>Détecteurs de chaleur</li>
 <li>Sirènes</li>
-
-<li>Télécommandes</li>
-
-<li>Centrales d'alarme</li>
-
-<li>Configuration</li>
-
+<li>Déclencheurs manuels</li>
+<li>Centrales incendie</li>
+<li>Signalisation</li>
+<li>Câblage</li>
 <li>Maintenance</li>
 
 </ul>
 
-
-<a
-href="https://wa.me/22871670258?text=Bonjour%2C%20je%20souhaite%20des%20informations%20sur%20vos%20syst%C3%A8mes%20d%27alarme."
-target="_blank"
-class="btn">
-
+<a href="#contact" class="btn">
 Demander un devis
-
 </a>
 
 </div>
@@ -2283,7 +1412,51 @@ Demander un devis
 </article>
 
 
-<!-- ÉLECTRICITÉ -->
+<!-- SERVICE 4 -->
+
+<article class="service">
+
+<div class="service-image">
+
+<img
+src="https://images.unsplash.com/photo-1558008258-3256797b43f3?auto=format&fit=crop&w=1200&q=80"
+alt="Système d'alarme">
+
+</div>
+
+<div class="service-content">
+
+<div class="service-icon">🚨</div>
+
+<h3>Alarmes & sécurité</h3>
+
+<p class="service-description">
+Renforcez la sécurité de vos locaux.
+</p>
+
+<ul class="service-list">
+
+<li>Alarmes anti-intrusion</li>
+<li>Détecteurs de mouvement</li>
+<li>Détecteurs d'ouverture</li>
+<li>Sirènes</li>
+<li>Télécommandes</li>
+<li>Centrales d'alarme</li>
+<li>Configuration</li>
+<li>Maintenance</li>
+
+</ul>
+
+<a href="#contact" class="btn">
+Demander un devis
+</a>
+
+</div>
+
+</article>
+
+
+<!-- SERVICE 5 -->
 
 <article class="service">
 
@@ -2291,60 +1464,35 @@ Demander un devis
 
 <img
 src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1200&q=80"
-alt="Installation électrique">
+alt="Électricité">
 
 </div>
-
 
 <div class="service-content">
 
-<div class="service-icon">
-⚡
-</div>
+<div class="service-icon">⚡</div>
 
-
-<h3>
-Électricité & électronique
-</h3>
-
+<h3>Électricité & électronique</h3>
 
 <p class="service-description">
-
-Des solutions électriques et
-électroniques adaptées aux
-bâtiments et équipements.
-
+Solutions électriques et électroniques.
 </p>
-
 
 <ul class="service-list">
 
 <li>Installations électriques</li>
-
-<li>Câblage électrique</li>
-
+<li>Câblage</li>
 <li>Tableaux électriques</li>
-
-<li>Diagnostic de pannes</li>
-
-<li>Maintenance électrique</li>
-
-<li>Maintenance électronique</li>
-
-<li>Installations basse tension</li>
-
-<li>Dépannage et entretien</li>
+<li>Interrupteurs</li>
+<li>Éclairage</li>
+<li>Diagnostic</li>
+<li>Maintenance</li>
+<li>Dépannage</li>
 
 </ul>
 
-
-<a
-href="https://wa.me/22871670258?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20vos%20services%20d%27%C3%A9lectricit%C3%A9%20et%20d%27%C3%A9lectronique."
-target="_blank"
-class="btn">
-
+<a href="#contact" class="btn">
 Demander un devis
-
 </a>
 
 </div>
@@ -2352,7 +1500,7 @@ Demander un devis
 </article>
 
 
-<!-- INFORMATIQUE -->
+<!-- SERVICE 6 -->
 
 <article class="service">
 
@@ -2360,58 +1508,34 @@ Demander un devis
 
 <img
 src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80"
-alt="Informatique et création de site web">
+alt="Informatique">
 
 </div>
-
 
 <div class="service-content">
 
-<div class="service-icon">
-💻
-</div>
+<div class="service-icon">💻</div>
 
-
-<h3>
-Informatique & création web
-</h3>
-
+<h3>Informatique & création web</h3>
 
 <p class="service-description">
-
-Des solutions numériques modernes
-pour développer votre activité
-et améliorer votre présence en ligne.
-
+Des solutions numériques modernes.
 </p>
-
 
 <ul class="service-list">
 
 <li>Création de sites web</li>
-
-<li>Sites vitrines professionnels</li>
-
-<li>HTML, CSS et JavaScript</li>
-
-<li>Maintenance de sites</li>
-
+<li>Sites vitrines</li>
+<li>HTML / CSS / JavaScript</li>
+<li>Maintenance web</li>
 <li>Assistance informatique</li>
-
-<li>Installation de logiciels</li>
-
+<li>Installation logiciels</li>
 <li>Maintenance informatique</li>
 
 </ul>
 
-
-<a
-href="https://wa.me/22871670258?text=Bonjour%2C%20je%20souhaite%20cr%C3%A9er%20un%20site%20web%20pour%20mon%20activit%C3%A9."
-target="_blank"
-class="btn">
-
+<a href="#contact" class="btn">
 Demander un devis
-
 </a>
 
 </div>
@@ -2419,7 +1543,7 @@ Demander un devis
 </article>
 
 
-<!-- DOMOTIQUE -->
+<!-- SERVICE 7 -->
 
 <article class="service">
 
@@ -2427,53 +1551,32 @@ Demander un devis
 
 <img
 src="https://images.unsplash.com/photo-1558008258-3256797b43f3?auto=format&fit=crop&w=1200&q=80"
-alt="Domotique maison intelligente">
+alt="Domotique">
 
 </div>
-
 
 <div class="service-content">
 
-<div class="service-icon">
-🏠
-</div>
+<div class="service-icon">🏠</div>
 
-
-<h3>
-Domotique & automatisation
-</h3>
-
+<h3>Domotique</h3>
 
 <p class="service-description">
-
-Rendez vos espaces plus intelligents,
-pratiques et faciles à contrôler.
-
+Rendez vos espaces plus intelligents.
 </p>
-
 
 <ul class="service-list">
 
 <li>Éclairage intelligent</li>
-
 <li>Automatisation</li>
-
 <li>Sécurité connectée</li>
-
 <li>Commande à distance</li>
-
 <li>Gestion intelligente</li>
 
 </ul>
 
-
-<a
-href="https://wa.me/22871670258?text=Bonjour%2C%20je%20souhaite%20des%20informations%20sur%20vos%20solutions%20de%20domotique."
-target="_blank"
-class="btn">
-
+<a href="#contact" class="btn">
 Demander un devis
-
 </a>
 
 </div>
@@ -2481,7 +1584,7 @@ Demander un devis
 </article>
 
 
-<!-- SOLAIRE -->
+<!-- SERVICE 8 -->
 
 <article class="service">
 
@@ -2489,60 +1592,37 @@ Demander un devis
 
 <img
 src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=80"
-alt="Panneaux solaires">
+alt="Énergie solaire">
 
 </div>
-
 
 <div class="service-content">
 
-<div class="service-icon">
-☀️
-</div>
+<div class="service-icon">☀️</div>
 
-
-<h3>
-Énergie solaire
-</h3>
-
+<h3>Énergie solaire</h3>
 
 <p class="service-description">
-
-Des solutions énergétiques modernes
-pour répondre à différents besoins
-en alimentation électrique.
-
+Des solutions énergétiques modernes.
 </p>
-
 
 <ul class="service-list">
 
-<li>Installation de panneaux solaires</li>
-
-<li>Solutions d'alimentation</li>
-
+<li>Panneaux solaires</li>
 <li>Systèmes photovoltaïques</li>
-
+<li>Alimentation électrique</li>
 <li>Maintenance</li>
-
-<li>Diagnostic et assistance</li>
+<li>Diagnostic</li>
 
 </ul>
 
-
-<a
-href="https://wa.me/22871670258?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20une%20solution%20solaire."
-target="_blank"
-class="btn">
-
+<a href="#contact" class="btn">
 Demander un devis
-
 </a>
 
 </div>
 
 </article>
-
 
 </div>
 
@@ -2551,9 +1631,535 @@ Demander un devis
 </section>
 
 
-<!-- ================================================= -->
-<!-- AVANTAGES -->
-<!-- ================================================= -->
+<!-- =====================================================
+     BOUTIQUE
+===================================================== -->
+
+<section id="boutique">
+
+<div class="container">
+
+<div class="section-title">
+
+<small>MOÏSE TECH SHOP</small>
+
+<h2>Notre boutique</h2>
+
+<p>
+Découvrez nos équipements et articles technologiques.
+</p>
+
+</div>
+
+<p class="shop-info">
+
+Les prix ne sont volontairement pas affichés.
+Ajoutez les articles qui vous intéressent au panier,
+puis envoyez votre demande de commande.
+Nous vous communiquerons la disponibilité et le devis.
+
+</p>
+
+
+<div class="shop-categories">
+
+<button class="category-btn active"
+onclick="filterProducts('all',this)">
+Tous
+</button>
+
+<button class="category-btn"
+onclick="filterProducts('camera',this)">
+Vidéosurveillance
+</button>
+
+<button class="category-btn"
+onclick="filterProducts('reseau',this)">
+Réseau
+</button>
+
+<button class="category-btn"
+onclick="filterProducts('electricite',this)">
+Électricité
+</button>
+
+<button class="category-btn"
+onclick="filterProducts('solaire',this)">
+Solaire
+</button>
+
+<button class="category-btn"
+onclick="filterProducts('securite',this)">
+Sécurité
+</button>
+
+</div>
+
+
+<div class="products" id="products">
+
+
+<!-- PRODUIT 1 -->
+
+<article class="product" data-category="camera">
+
+<div class="product-image">
+
+<img
+src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=800&q=80"
+alt="Caméra de surveillance">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+Vidéosurveillance
+</span>
+
+<h3>Caméra de surveillance</h3>
+
+<p>
+Caméra de sécurité pour maison,
+commerce ou entreprise.
+</p>
+
+<div class="product-actions">
+
+<button
+class="btn"
+onclick="addToCart('Caméra de surveillance',this.closest('.product').querySelector('img').src)">
+🛒 Ajouter
+</button>
+
+<button
+class="btn btn-blue"
+onclick="askProduct('Caméra de surveillance')">
+💬 Demander
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+
+<!-- PRODUIT 2 -->
+
+<article class="product" data-category="camera">
+
+<div class="product-image">
+
+<img
+src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80"
+alt="Caméra IP">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+Vidéosurveillance
+</span>
+
+<h3>Caméra IP</h3>
+
+<p>
+Caméra IP destinée à la surveillance
+à distance.
+</p>
+
+<div class="product-actions">
+
+<button
+class="btn"
+onclick="addToCart('Caméra IP',this.closest('.product').querySelector('img').src)">
+🛒 Ajouter
+</button>
+
+<button
+class="btn btn-blue"
+onclick="askProduct('Caméra IP')">
+💬 Demander
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+
+<!-- PRODUIT 3 -->
+
+<article class="product" data-category="camera">
+
+<div class="product-image">
+
+<img
+src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=800&q=80"
+alt="DVR NVR vidéosurveillance">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+Vidéosurveillance
+</span>
+
+<h3>DVR / NVR</h3>
+
+<p>
+Enregistreur pour système de vidéosurveillance.
+</p>
+
+<div class="product-actions">
+
+<button
+class="btn"
+onclick="addToCart('DVR / NVR',this.closest('.product').querySelector('img').src)">
+🛒 Ajouter
+</button>
+
+<button
+class="btn btn-blue"
+onclick="askProduct('DVR / NVR')">
+💬 Demander
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+
+<!-- PRODUIT 4 -->
+
+<article class="product" data-category="reseau">
+
+<div class="product-image">
+
+<img
+src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80"
+alt="Câble RJ45 réseau">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+Réseau
+</span>
+
+<h3>Câble RJ45</h3>
+
+<p>
+Câble réseau pour installations informatiques.
+</p>
+
+<div class="product-actions">
+
+<button
+class="btn"
+onclick="addToCart('Câble RJ45',this.closest('.product').querySelector('img').src)">
+🛒 Ajouter
+</button>
+
+<button
+class="btn btn-blue"
+onclick="askProduct('Câble RJ45')">
+💬 Demander
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+
+<!-- PRODUIT 5 -->
+
+<article class="product" data-category="reseau">
+
+<div class="product-image">
+
+<img
+src="https://images.unsplash.com/photo-1551703599-6b3e8379aa8f?auto=format&fit=crop&w=800&q=80"
+alt="Switch réseau">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+Réseau
+</span>
+
+<h3>Switch réseau</h3>
+
+<p>
+Équipement pour connecter plusieurs appareils.
+</p>
+
+<div class="product-actions">
+
+<button
+class="btn"
+onclick="addToCart('Switch réseau',this.closest('.product').querySelector('img').src)">
+🛒 Ajouter
+</button>
+
+<button
+class="btn btn-blue"
+onclick="askProduct('Switch réseau')">
+💬 Demander
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+
+<!-- PRODUIT 6 -->
+
+<article class="product" data-category="electricite">
+
+<div class="product-image">
+
+<img
+src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=800&q=80"
+alt="Interrupteur électrique">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+Électricité
+</span>
+
+<h3>Interrupteur</h3>
+
+<p>
+Interrupteurs pour installations électriques.
+</p>
+
+<div class="product-actions">
+
+<button
+class="btn"
+onclick="addToCart('Interrupteur électrique',this.closest('.product').querySelector('img').src)">
+🛒 Ajouter
+</button>
+
+<button
+class="btn btn-blue"
+onclick="askProduct('Interrupteur électrique')">
+💬 Demander
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+
+<!-- PRODUIT 7 -->
+
+<article class="product" data-category="electricite">
+
+<div class="product-image">
+
+<img
+src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=800&q=80"
+alt="Ampoule LED">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+Électricité
+</span>
+
+<h3>Ampoule LED</h3>
+
+<p>
+Éclairage LED pour différents types d'installations.
+</p>
+
+<div class="product-actions">
+
+<button
+class="btn"
+onclick="addToCart('Ampoule LED',this.closest('.product').querySelector('img').src)">
+🛒 Ajouter
+</button>
+
+<button
+class="btn btn-blue"
+onclick="askProduct('Ampoule LED')">
+💬 Demander
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+
+<!-- PRODUIT 8 -->
+
+<article class="product" data-category="electricite">
+
+<div class="product-image">
+
+<img
+src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=800&q=80"
+alt="Disjoncteur électrique">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+Électricité
+</span>
+
+<h3>Disjoncteur</h3>
+
+<p>
+Protection pour installations électriques.
+</p>
+
+<div class="product-actions">
+
+<button
+class="btn"
+onclick="addToCart('Disjoncteur',this.closest('.product').querySelector('img').src)">
+🛒 Ajouter
+</button>
+
+<button
+class="btn btn-blue"
+onclick="askProduct('Disjoncteur')">
+💬 Demander
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+
+<!-- PRODUIT 9 -->
+
+<article class="product" data-category="solaire">
+
+<div class="product-image">
+
+<img
+src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=800&q=80"
+alt="Panneau solaire">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+Solaire
+</span>
+
+<h3>Panneau solaire</h3>
+
+<p>
+Solution photovoltaïque pour alimentation électrique.
+</p>
+
+<div class="product-actions">
+
+<button
+class="btn"
+onclick="addToCart('Panneau solaire',this.closest('.product').querySelector('img').src)">
+🛒 Ajouter
+</button>
+
+<button
+class="btn btn-blue"
+onclick="askProduct('Panneau solaire')">
+💬 Demander
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+
+<!-- PRODUIT 10 -->
+
+<article class="product" data-category="securite">
+
+<div class="product-image">
+
+<img
+src="https://images.unsplash.com/photo-1558008258-3256797b43f3?auto=format&fit=crop&w=800&q=80"
+alt="Alarme de sécurité">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+Sécurité
+</span>
+
+<h3>Système d'alarme</h3>
+
+<p>
+Solution destinée à renforcer la sécurité des locaux.
+</p>
+
+<div class="product-actions">
+
+<button
+class="btn"
+onclick="addToCart('Système d’alarme',this.closest('.product').querySelector('img').src)">
+🛒 Ajouter
+</button>
+
+<button
+class="btn btn-blue"
+onclick="askProduct('Système d’alarme')">
+💬 Demander
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     AVANTAGES
+===================================================== -->
 
 <section id="avantages">
 
@@ -2561,94 +2167,36 @@ Demander un devis
 
 <div class="section-title">
 
-<small>
-POURQUOI NOUS CHOISIR ?
-</small>
+<small>POURQUOI NOUS CHOISIR ?</small>
 
-<h2>
-Une approche professionnelle
-</h2>
-
-<p>
-Notre priorité est de proposer
-des solutions adaptées à chaque projet.
-</p>
+<h2>Une approche professionnelle</h2>
 
 </div>
-
 
 <div class="advantages">
 
+<div class="advantage">
+<div class="advantage-icon">🛠️</div>
+<h3>Installation</h3>
+<p>Des installations adaptées à vos besoins.</p>
+</div>
 
 <div class="advantage">
-
-<div class="advantage-icon">
-🛠️
+<div class="advantage-icon">🔐</div>
+<h3>Sécurité</h3>
+<p>Des solutions pour renforcer vos locaux.</p>
 </div>
-
-<h3>
-Installation
-</h3>
-
-<p>
-Des installations pensées
-selon les besoins du projet.
-</p>
-
-</div>
-
 
 <div class="advantage">
-
-<div class="advantage-icon">
-🔐
+<div class="advantage-icon">⚙️</div>
+<h3>Maintenance</h3>
+<p>Assistance, entretien et dépannage.</p>
 </div>
-
-<h3>
-Sécurité
-</h3>
-
-<p>
-Des solutions destinées à
-renforcer la sécurité de vos locaux.
-</p>
-
-</div>
-
 
 <div class="advantage">
-
-<div class="advantage-icon">
-⚙️
-</div>
-
-<h3>
-Maintenance
-</h3>
-
-<p>
-Assistance, entretien et
-dépannage de vos installations.
-</p>
-
-</div>
-
-
-<div class="advantage">
-
-<div class="advantage-icon">
-🤝
-</div>
-
-<h3>
-Accompagnement
-</h3>
-
-<p>
-Conseils et accompagnement
-dans le choix de vos solutions.
-</p>
-
+<div class="advantage-icon">🤝</div>
+<h3>Accompagnement</h3>
+<p>Conseils et accompagnement personnalisé.</p>
 </div>
 
 </div>
@@ -2658,9 +2206,9 @@ dans le choix de vos solutions.
 </section>
 
 
-<!-- ================================================= -->
-<!-- RÉALISATIONS -->
-<!-- ================================================= -->
+<!-- =====================================================
+     PROJETS
+===================================================== -->
 
 <section id="projets">
 
@@ -2668,156 +2216,61 @@ dans le choix de vos solutions.
 
 <div class="section-title">
 
-<small>
-NOS DOMAINES D'INTERVENTION
-</small>
+<small>NOS DOMAINES</small>
 
-<h2>
-Quelques réalisations
-</h2>
-
-<p>
-Découvrez les principaux domaines
-dans lesquels nous intervenons.
-</p>
+<h2>Quelques réalisations</h2>
 
 </div>
-
 
 <div class="projects">
 
+<div class="project">
+<div class="project-image">📹</div>
+<div class="project-content">
+<h3>Vidéosurveillance</h3>
+<p>Installation et configuration de caméras.</p>
+</div>
+</div>
 
 <div class="project">
-
-<div class="project-image">
-📹
-</div>
-
+<div class="project-image">🌐</div>
 <div class="project-content">
-
-<h3>
-Vidéosurveillance
-</h3>
-
-<p>
-Installation et configuration
-de systèmes de surveillance.
-</p>
-
+<h3>Réseau informatique</h3>
+<p>Câblage, Wi-Fi et configuration réseau.</p>
 </div>
-
 </div>
-
 
 <div class="project">
-
-<div class="project-image">
-🌐
-</div>
-
+<div class="project-image">🔥</div>
 <div class="project-content">
-
-<h3>
-Réseau informatique
-</h3>
-
-<p>
-Câblage, Wi-Fi,
-configuration et organisation réseau.
-</p>
-
+<h3>Système incendie</h3>
+<p>Détection et alarme incendie.</p>
 </div>
-
 </div>
-
 
 <div class="project">
-
-<div class="project-image">
-🔥
-</div>
-
+<div class="project-image">🚨</div>
 <div class="project-content">
-
-<h3>
-Système incendie
-</h3>
-
-<p>
-Détection, alarme et
-protection incendie.
-</p>
-
+<h3>Système d'alarme</h3>
+<p>Solutions de sécurité.</p>
 </div>
-
 </div>
-
 
 <div class="project">
-
-<div class="project-image">
-🚨
-</div>
-
+<div class="project-image">⚡</div>
 <div class="project-content">
-
-<h3>
-Système d'alarme
-</h3>
-
-<p>
-Solutions de sécurité
-et détection d'intrusion.
-</p>
-
+<h3>Électricité</h3>
+<p>Installation et maintenance.</p>
 </div>
-
 </div>
-
 
 <div class="project">
-
-<div class="project-image">
-⚡
-</div>
-
+<div class="project-image">💻</div>
 <div class="project-content">
-
-<h3>
-Électricité & électronique
-</h3>
-
-<p>
-Installation, maintenance
-et dépannage.
-</p>
-
+<h3>Création web</h3>
+<p>Sites web modernes et professionnels.</p>
 </div>
-
 </div>
-
-
-<div class="project">
-
-<div class="project-image">
-💻
-</div>
-
-<div class="project-content">
-
-<h3>
-Création web
-</h3>
-
-<p>
-Sites web modernes
-et professionnels.
-</p>
-
-</div>
-
-</div>
-
 
 </div>
 
@@ -2826,14 +2279,13 @@ et professionnels.
 </section>
 
 
-<!-- ================================================= -->
-<!-- COMPÉTENCES -->
-<!-- ================================================= -->
+<!-- =====================================================
+     COMPETENCES
+===================================================== -->
 
 <section id="competences">
 
 <div class="container skills">
-
 
 <div>
 
@@ -2841,109 +2293,61 @@ et professionnels.
 NOS COMPÉTENCES
 </div>
 
-
 <h2>
-
 Des compétences variées
 au service de vos projets
-
 </h2>
-
 
 <br>
 
-
 <div class="skill">
 
 <div class="skill-info">
-
-<span>
-Réseaux informatiques
-</span>
-
-<strong>
-95%
-</strong>
-
+<span>Réseaux informatiques</span>
+<strong>95%</strong>
 </div>
 
-
 <div class="progress">
-
 <span style="width:95%"></span>
-
 </div>
 
 </div>
-
 
 <div class="skill">
 
 <div class="skill-info">
-
-<span>
-Sécurité électronique
-</span>
-
-<strong>
-90%
-</strong>
-
+<span>Sécurité électronique</span>
+<strong>90%</strong>
 </div>
 
-
 <div class="progress">
-
 <span style="width:90%"></span>
-
 </div>
 
 </div>
-
 
 <div class="skill">
 
 <div class="skill-info">
-
-<span>
-Création web
-</span>
-
-<strong>
-90%
-</strong>
-
+<span>Création web</span>
+<strong>90%</strong>
 </div>
 
-
 <div class="progress">
-
 <span style="width:90%"></span>
-
 </div>
 
 </div>
-
 
 <div class="skill">
 
 <div class="skill-info">
-
-<span>
-Électricité & énergie
-</span>
-
-<strong>
-85%
-</strong>
-
+<span>Électricité & énergie</span>
+<strong>85%</strong>
 </div>
 
-
 <div class="progress">
-
 <span style="width:85%"></span>
-
 </div>
 
 </div>
@@ -2957,27 +2361,16 @@ Création web
 TECHNOLOGIES
 </div>
 
-
-<h2>
-Outils et domaines
-</h2>
-
+<h2>Outils et domaines</h2>
 
 <br>
 
-
 <p style="color:#aeb8c4;">
 
-HTML • CSS • JavaScript •
-Réseaux informatiques •
-Wi-Fi • MikroTik •
-Vidéosurveillance •
-Alarmes •
-Sécurité incendie •
-Électricité •
-Électronique •
-Domotique •
-Énergie solaire
+HTML • CSS • JavaScript • Réseaux informatiques •
+Wi-Fi • MikroTik • Vidéosurveillance • Alarmes •
+Sécurité incendie • Électricité • Électronique •
+Domotique • Énergie solaire
 
 </p>
 
@@ -2988,86 +2381,57 @@ Domotique •
 </section>
 
 
-<!-- ================================================= -->
-<!-- LOCALISATION -->
-<!-- ================================================= -->
+<!-- =====================================================
+     LOCALISATION
+===================================================== -->
 
 <section id="localisation">
 
 <div class="container location">
 
-
 <div class="location-info">
 
 <div class="small-title">
-
 NOTRE LOCALISATION
-
 </div>
 
-
 <h2>
-
 Retrouvez-nous facilement
-
 </h2>
 
-
 <p>
-
-Vous souhaitez nous rencontrer,
-discuter d'un projet ou demander
-une intervention ?
-
-Contactez-nous avant votre déplacement
-afin de confirmer le lieu et les
-modalités de rendez-vous.
-
+Vous souhaitez nous rencontrer, discuter d'un projet
+ou demander une intervention ?
+Contactez-nous avant votre déplacement.
 </p>
-
 
 <div class="location-item">
 
-<strong>
-📍 Zone d'intervention
-</strong>
+<strong>📍 Zone d'intervention</strong>
 
 Lomé et environs, Togo
 
 </div>
 
-
 <div class="location-item">
 
-<strong>
-📞 Téléphone
-</strong>
+<strong>📞 Téléphone</strong>
 
 <a href="tel:+22897613312">
-
 97 61 33 12
-
 </a>
 
 </div>
-
 
 <div class="location-item">
 
-<strong>
-💬 WhatsApp
-</strong>
+<strong>💬 WhatsApp</strong>
 
-<a
-href="https://wa.me/22871670258"
-target="_blank">
-
+<a href="https://wa.me/22871670258" target="_blank">
 71 67 02 58
-
 </a>
 
 </div>
-
 
 <a
 href="https://www.google.com/maps/search/?api=1&query=Lome%2C%20Togo"
@@ -3080,83 +2444,58 @@ class="btn">
 
 </div>
 
-
 <div class="map">
 
 <iframe
-
 src="https://www.google.com/maps?q=Lome,Togo&output=embed"
-
 loading="lazy"
-
 allowfullscreen>
-
 </iframe>
 
 </div>
-
 
 </div>
 
 </section>
 
 
-<!-- ================================================= -->
-<!-- CONTACT -->
-<!-- ================================================= -->
+<!-- =====================================================
+     CONTACT
+===================================================== -->
 
 <section id="contact">
 
 <div class="container contact">
 
-
 <div>
 
 <div class="small-title">
-
 CONTACT
-
 </div>
 
-
 <h2>
-
 Parlons de votre projet
-
 </h2>
 
-
 <p class="contact-intro">
-
 Vous avez besoin d'une installation,
 d'une maintenance ou d'un devis ?
-
-Décrivez-nous votre projet et
-nous vous répondrons.
-
+Décrivez-nous votre projet.
 </p>
-
 
 <div class="contact-item">
 
-<strong>
-📞 Appel
-</strong>
+<strong>📞 Appel</strong>
 
 <a href="tel:+22897613312">
-
 97 61 33 12
-
 </a>
 
 </div>
 
-
 <div class="contact-item">
 
-<strong>
-💬 WhatsApp
-</strong>
+<strong>💬 WhatsApp</strong>
 
 <a
 href="https://wa.me/22871670258"
@@ -3168,15 +2507,11 @@ target="_blank">
 
 </div>
 
-
 <div class="contact-item">
 
-<strong>
-✉️ Email
-</strong>
+<strong>✉️ Email</strong>
 
-<a
-href="mailto:lemonmoise1@gmail.com">
+<a href="mailto:lemonmoise1@gmail.com">
 
 lemonmoise1@gmail.com
 
@@ -3184,46 +2519,12 @@ lemonmoise1@gmail.com
 
 </div>
 
-
-<div class="social">
-
-<a
-href="https://www.facebook.com/walter.obrian.71697"
-target="_blank"
-rel="noopener noreferrer">
-
-Facebook
-
-</a>
-
-
-<a
-href="https://wa.me/22871670258"
-target="_blank">
-
-WhatsApp
-
-</a>
-
-
-<a
-href="mailto:lemonmoise1@gmail.com">
-
-Email
-
-</a>
-
 </div>
 
-</div>
-
-
-<!-- FORMULAIRE -->
 
 <form
 class="contact-form"
 id="contactForm">
-
 
 <input
 type="text"
@@ -3231,81 +2532,880 @@ id="nom"
 placeholder="Votre nom"
 required>
 
-
 <input
 type="email"
 id="email"
 placeholder="Votre adresse e-mail"
 required>
 
-
 <input
 type="tel"
 id="telephone"
 placeholder="Votre téléphone">
 
-
-<select
-id="service"
-required>
+<select id="service" required>
 
 <option value="">
-
 Choisissez un service
-
 </option>
 
-<option>
-Réseaux informatiques
-</option>
-
-<option>
-Vidéosurveillance
-</option>
-
-<option>
-Sécurité incendie
-</option>
-
-<option>
-Système d'alarme
-</option>
-
-<option>
-Électricité
-</option>
-
-<option>
-Électronique
-</option>
-
-<option>
-Informatique / Création web
-</option>
-
-<option>
-Domotique
-</option>
-
-<option>
-Énergie solaire
-</option>
-
-<option>
-Autre
-</option>
+<option>Réseaux informatiques</option>
+<option>Vidéosurveillance</option>
+<option>Sécurité incendie</option>
+<option>Système d'alarme</option>
+<option>Électricité</option>
+<option>Électronique</option>
+<option>Informatique / Création web</option>
+<option>Domotique</option>
+<option>Énergie solaire</option>
+<option>Boutique / Produit</option>
+<option>Autre</option>
 
 </select>
-
 
 <textarea
 id="projet"
 placeholder="Décrivez votre projet..."
 required></textarea>
 
-
 <button
-class="btn btn-whatsapp"
+class="btn btn-green"
 type="submit">
 
+💬 Envoyer sur WhatsApp
+
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+<div class="container">
+
+<div class="footer-content">
+
+<div>
+
+<h3>MOÏSE TECH & ÉNERGIE</h3>
+
+<p>
+
+Technologie • Sécurité • Énergie •
+Réseaux • Informatique
+
+</p>
+
+<p style="margin-top:10px;">
+
+Solutions modernes pour particuliers,
+commerces et entreprises.
+
+</p>
+
+</div>
+
+
+<div>
+
+<h3>Navigation</h3>
+
+<a href="#accueil">Accueil</a>
+<a href="#services">Services</a>
+<a href="#boutique">Boutique</a>
+<a href="#projets">Réalisations</a>
+<a href="#contact">Contact</a>
+
+</div>
+
+
+<div>
+
+<h3>Contact</h3>
+
+<a href="tel:+22897613312">
+📞 97 61 33 12
+</a>
+
+<a href="https://wa.me/22871670258">
+💬 71 67 02 58
+</a>
+
+<a href="mailto:lemonmoise1@gmail.com">
+✉️ lemonmoise1@gmail.com
+</a>
+
+</div>
+
+</div>
+
+
+<div class="copyright">
+
+© 2026 <strong>LEMON ESSO-DINAM MOÏSE</strong> —
+Moïse Tech & Énergie.
+
+<br>
+
+Site conçu et développé par
+<strong>LEMON ESSO-DINAM MOÏSE</strong>.
+
+<br>
+
+Tous droits réservés.
+
+</div>
+
+</div>
+
+</footer>
+
+
+<!-- =====================================================
+     PANIER
+===================================================== -->
+
+<div class="cart-overlay" id="cartOverlay">
+
+<div class="cart-panel">
+
+<div class="cart-header">
+
+<h2>🛒 Mon panier</h2>
+
+<button
+class="close-cart"
+onclick="closeCart()">
+
+×
+
+</button>
+
+</div>
+
+
+<div id="cartItems">
+
+<p style="color:#aeb8c4;">
+Votre panier est vide.
+</p>
+
+</div>
+
+
+<div class="cart-footer">
+
+<div class="cart-note">
+
+<strong>ℹ️ Information</strong>
+
+<br>
+
+Les prix ne sont pas affichés sur la boutique.
+Après votre demande, Moïse Tech & Énergie
+vous communiquera la disponibilité et le devis.
+
+</div>
+
+<button
+class="btn"
+style="width:100%;"
+onclick="showCheckout()">
+
+Continuer la commande
+
+</button>
+
+
+<div class="checkout" id="checkout">
+
+<h3>
+📦 Informations de commande
+</h3>
+
+<input
+type="text"
+id="clientName"
+placeholder="Nom complet"
+required>
+
+<input
+type="tel"
+id="clientPhone"
+placeholder="Téléphone / WhatsApp"
+required>
+
+<input
+type="text"
+id="clientAddress"
+placeholder="Ville / lieu de livraison">
+
+<textarea
+id="clientMessage"
+placeholder="Informations supplémentaires"></textarea>
+
+
+<h3>
+💳 Mode de paiement
+</h3>
+
+
+<div class="payment-methods">
+
+<label class="payment-method">
+
+<input
+type="radio"
+name="payment"
+value="T-Money">
+
+📱 T-Money
+
+</label>
+
+
+<label class="payment-method">
+
+<input
+type="radio"
+name="payment"
+value="Flooz">
+
+📱 Flooz
+
+</label>
+
+
+<label class="payment-method">
+
+<input
+type="radio"
+name="payment"
+value="PayGate">
+
+💳 PayGate
+
+</label>
+
+
+<label class="payment-method">
+
+<input
+type="radio"
+name="payment"
+value="À confirmer">
+
+💬 Paiement à confirmer avec le vendeur
+
+</label>
+
+</div>
+
+
+<p style="color:#aeb8c4;font-size:13px;margin-bottom:15px;">
+
+🔐 L'intégration automatique des paiements sera
+connectée ultérieurement avec les API officielles.
+Aucune clé secrète n'est présente dans cette version.
+
+</p>
+
+
+<button
+class="btn btn-green"
+style="width:100%;"
+onclick="sendOrder()">
+
+📲 Envoyer la commande sur WhatsApp
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     CHAT
+===================================================== -->
+
+<div class="chat-float">
+
+<button
+class="chat-toggle"
+onclick="toggleChat()">
+
 💬
+
+</button>
+
+
+<div class="chat-panel" id="chatPanel">
+
+<div class="chat-header">
+
+<strong>Moïse Tech & Énergie</strong>
+
+<small>
+Comment pouvons-nous vous aider ?
+</small>
+
+</div>
+
+
+<div class="chat-body">
+
+<p>
+Notre équipe est disponible pour répondre
+à vos questions.
+</p>
+
+
+<a
+class="chat-option"
+href="https://wa.me/22871670258?text=Bonjour%20Mo%C3%AFse%20Tech%20%26%20%C3%89nergie%2C%20j%27ai%20une%20question."
+target="_blank">
+
+<span>💬</span>
+
+<div>
+
+<strong>WhatsApp</strong>
+
+<small>Discuter avec nous</small>
+
+</div>
+
+</a>
+
+
+<a
+class="chat-option"
+href="mailto:lemonmoise1@gmail.com">
+
+<span>✉️</span>
+
+<div>
+
+<strong>Email</strong>
+
+<small>Nous écrire</small>
+
+</div>
+
+</a>
+
+
+<a
+class="chat-option"
+href="tel:+22897613312">
+
+<span>📞</span>
+
+<div>
+
+<strong>Appeler</strong>
+
+<small>97 61 33 12</small>
+
+</div>
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+/* =====================================================
+   MENU MOBILE
+===================================================== */
+
+const menuButton =
+document.getElementById("menuButton");
+
+const menu =
+document.getElementById("menu");
+
+menuButton.addEventListener("click", function(){
+
+    menu.classList.toggle("show");
+
+});
+
+
+/* =====================================================
+   PANIER
+===================================================== */
+
+let cart = [];
+
+
+function addToCart(name,image){
+
+    const existing =
+    cart.find(item => item.name === name);
+
+    if(existing){
+
+        existing.quantity++;
+
+    }else{
+
+        cart.push({
+
+            name:name,
+            image:image,
+            quantity:1
+
+        });
+
+    }
+
+    updateCart();
+
+    alert("✅ Article ajouté au panier !");
+
+}
+
+
+function updateCart(){
+
+    const cartCount =
+    document.getElementById("cartCount");
+
+    const cartItems =
+    document.getElementById("cartItems");
+
+    let totalQuantity = 0;
+
+    cart.forEach(item => {
+
+        totalQuantity += item.quantity;
+
+    });
+
+    cartCount.textContent =
+    totalQuantity;
+
+
+    if(cart.length === 0){
+
+        cartItems.innerHTML =
+        '<p style="color:#aeb8c4;">Votre panier est vide.</p>';
+
+        return;
+
+    }
+
+
+    cartItems.innerHTML = "";
+
+
+    cart.forEach((item,index) => {
+
+        const div =
+        document.createElement("div");
+
+        div.className =
+        "cart-item";
+
+        div.innerHTML = `
+
+        <img src="${item.image}" alt="${item.name}">
+
+        <div class="cart-item-info">
+
+            <h4>${item.name}</h4>
+
+            <p>Prix : à confirmer</p>
+
+            <div class="quantity">
+
+                <button onclick="changeQuantity(${index},-1)">
+                    -
+                </button>
+
+                <span>${item.quantity}</span>
+
+                <button onclick="changeQuantity(${index},1)">
+                    +
+                </button>
+
+                <button
+                class="remove-item"
+                onclick="removeItem(${index})">
+
+                    Supprimer
+
+                </button>
+
+            </div>
+
+        </div>
+
+        `;
+
+        cartItems.appendChild(div);
+
+    });
+
+}
+
+
+function changeQuantity(index,change){
+
+    cart[index].quantity += change;
+
+    if(cart[index].quantity <= 0){
+
+        cart.splice(index,1);
+
+    }
+
+    updateCart();
+
+}
+
+
+function removeItem(index){
+
+    cart.splice(index,1);
+
+    updateCart();
+
+}
+
+
+function openCart(){
+
+    document
+    .getElementById("cartOverlay")
+    .classList.add("show");
+
+}
+
+
+function closeCart(){
+
+    document
+    .getElementById("cartOverlay")
+    .classList.remove("show");
+
+}
+
+
+/* =====================================================
+   CHECKOUT
+===================================================== */
+
+function showCheckout(){
+
+    if(cart.length === 0){
+
+        alert("⚠️ Votre panier est vide.");
+
+        return;
+
+    }
+
+    document
+    .getElementById("checkout")
+    .classList.add("show");
+
+}
+
+
+function sendOrder(){
+
+    if(cart.length === 0){
+
+        alert("Votre panier est vide.");
+
+        return;
+
+    }
+
+
+    const name =
+    document.getElementById("clientName").value;
+
+    const phone =
+    document.getElementById("clientPhone").value;
+
+    const address =
+    document.getElementById("clientAddress").value;
+
+    const message =
+    document.getElementById("clientMessage").value;
+
+
+    const payment =
+    document.querySelector(
+        'input[name="payment"]:checked'
+    );
+
+
+    if(!name || !phone){
+
+        alert(
+        "⚠️ Veuillez renseigner votre nom et votre téléphone."
+        );
+
+        return;
+
+    }
+
+
+    if(!payment){
+
+        alert(
+        "⚠️ Veuillez choisir un mode de paiement."
+        );
+
+        return;
+
+    }
+
+
+    let productsText = "";
+
+
+    cart.forEach(item => {
+
+        productsText +=
+        "- " +
+        item.name +
+        " x" +
+        item.quantity +
+        "%0A";
+
+    });
+
+
+    const text =
+
+    "Bonjour Moïse Tech & Énergie,%0A%0A" +
+
+    "Je souhaite passer une commande.%0A%0A" +
+
+    "👤 Nom : " +
+    encodeURIComponent(name) +
+    "%0A" +
+
+    "📞 Téléphone : " +
+    encodeURIComponent(phone) +
+    "%0A" +
+
+    "📍 Adresse : " +
+    encodeURIComponent(address) +
+    "%0A%0A" +
+
+    "🛒 Articles :%0A" +
+
+    productsText +
+
+    "%0A💳 Mode de paiement : " +
+    encodeURIComponent(payment.value) +
+
+    "%0A%0A📝 Message : " +
+    encodeURIComponent(message);
+
+
+    const whatsapp =
+    "https://wa.me/22871670258?text=" +
+    text;
+
+
+    window.open(
+        whatsapp,
+        "_blank"
+    );
+
+}
+
+
+/* =====================================================
+   FILTRE BOUTIQUE
+===================================================== */
+
+function filterProducts(category,button){
+
+    const products =
+    document.querySelectorAll(".product");
+
+    const buttons =
+    document.querySelectorAll(".category-btn");
+
+
+    buttons.forEach(btn => {
+
+        btn.classList.remove("active");
+
+    });
+
+
+    button.classList.add("active");
+
+
+    products.forEach(product => {
+
+        if(
+            category === "all" ||
+            product.dataset.category === category
+        ){
+
+            product.style.display = "block";
+
+        }else{
+
+            product.style.display = "none";
+
+        }
+
+    });
+
+}
+
+
+/* =====================================================
+   DEMANDER UN PRODUIT
+===================================================== */
+
+function askProduct(product){
+
+    const message =
+
+    "Bonjour Moïse Tech & Énergie,%0A%0A" +
+
+    "Je suis intéressé par le produit suivant :%0A" +
+
+    product +
+
+    "%0A%0APouvez-vous me communiquer sa disponibilité et son devis ?";
+
+
+    window.open(
+
+        "https://wa.me/22871670258?text=" +
+        message,
+
+        "_blank"
+
+    );
+
+}
+
+
+/* =====================================================
+   CHAT
+===================================================== */
+
+function toggleChat(){
+
+    document
+    .getElementById("chatPanel")
+    .classList.toggle("show");
+
+}
+
+
+/* =====================================================
+   FORMULAIRE CONTACT
+===================================================== */
+
+document
+.getElementById("contactForm")
+.addEventListener("submit",function(e){
+
+    e.preventDefault();
+
+
+    const nom =
+    document.getElementById("nom").value;
+
+    const email =
+    document.getElementById("email").value;
+
+    const telephone =
+    document.getElementById("telephone").value;
+
+    const service =
+    document.getElementById("service").value;
+
+    const projet =
+    document.getElementById("projet").value;
+
+
+    const message =
+
+    "Bonjour Moïse Tech & Énergie,%0A%0A" +
+
+    "👤 Nom : " +
+    encodeURIComponent(nom) +
+
+    "%0A📧 Email : " +
+    encodeURIComponent(email) +
+
+    "%0A📞 Téléphone : " +
+    encodeURIComponent(telephone) +
+
+    "%0A🔧 Service : " +
+    encodeURIComponent(service) +
+
+    "%0A%0A📝 Projet : " +
+    encodeURIComponent(projet);
+
+
+    window.open(
+
+        "https://wa.me/22871670258?text=" +
+        message,
+
+        "_blank"
+
+    );
+
+});
+
+
+/* =====================================================
+   FERMETURE PANIER EN CLIQUANT À CÔTÉ
+===================================================== */
+
+document
+.getElementById("cartOverlay")
+.addEventListener("click",function(e){
+
+    if(e.target === this){
+
+        closeCart();
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>
