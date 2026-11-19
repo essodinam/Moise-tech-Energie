@@ -1401,23 +1401,23 @@ class="btn btn-blue">
 <div class="stats-bar" style="display:grid;grid-template-columns:repeat(4,1fr);gap:25px;text-align:center;">
 
 <div>
-<div style="font-size:34px;font-weight:bold;color:var(--or);font-family:inherit;">50+</div>
-<div style="color:var(--gris);font-size:14px;margin-top:5px;">Projets réalisés</div>
+<div style="font-size:34px;font-weight:bold;color:var(--or);font-family:inherit;">8</div>
+<div style="color:var(--gris);font-size:14px;margin-top:5px;">Domaines d'intervention</div>
 </div>
 
 <div>
-<div style="font-size:34px;font-weight:bold;color:var(--or);">30+</div>
-<div style="color:var(--gris);font-size:14px;margin-top:5px;">Clients satisfaits</div>
+<div style="font-size:34px;font-weight:bold;color:var(--or);">Lomé</div>
+<div style="color:var(--gris);font-size:14px;margin-top:5px;">et environs</div>
 </div>
 
 <div>
-<div style="font-size:34px;font-weight:bold;color:var(--or);">3+</div>
-<div style="color:var(--gris);font-size:14px;margin-top:5px;">Années d'expérience</div>
+<div style="font-size:34px;font-weight:bold;color:var(--or);">Gratuit</div>
+<div style="color:var(--gris);font-size:14px;margin-top:5px;">Devis sur demande</div>
 </div>
 
 <div>
-<div style="font-size:34px;font-weight:bold;color:var(--or);">100%</div>
-<div style="color:var(--gris);font-size:14px;margin-top:5px;">Engagement qualité</div>
+<div style="font-size:34px;font-weight:bold;color:var(--or);">7j/7</div>
+<div style="color:var(--gris);font-size:14px;margin-top:5px;">Réponse par WhatsApp</div>
 </div>
 
 </div>
@@ -1439,7 +1439,7 @@ class="btn btn-blue">
 <div class="about-photo">
 
 <img
-src="images/photo-01.jpg"
+src="photo-01.jpg"
 alt="LEMON ESSO-DINAM MOÏSE - Fondateur de Moïse Tech & Énergie">
 
 </div>
@@ -1581,7 +1581,7 @@ d'intervention.
 <div class="service-image">
 
 <img
-src="images/photo-02.jpg"
+src="photo-02.jpg"
 alt="Réseau informatique et baie serveur">
 
 </div>
@@ -1641,7 +1641,7 @@ Demander un devis
 <div class="service-image">
 
 <img
-src="images/photo-03.jpg"
+src="photo-03.jpg"
 alt="Système de sécurité incendie">
 
 </div>
@@ -1700,7 +1700,7 @@ Demander un devis
 <div class="service-image">
 
 <img
-src="images/photo-04.jpg"
+src="photo-04.jpg"
 alt="Caméra de vidéosurveillance">
 
 </div>
@@ -1816,7 +1816,7 @@ Demander un devis
 <div class="service-image">
 
 <img
-src="images/photo-05.jpg"
+src="photo-05.jpg"
 alt="Installation électrique">
 
 </div>
@@ -1873,7 +1873,7 @@ Demander un devis
 <div class="service-image">
 
 <img
-src="images/photo-06.jpg"
+src="photo-06.jpg"
 alt="Informatique et création de site web">
 
 </div>
@@ -1929,7 +1929,7 @@ Demander un devis
 <div class="service-image">
 
 <img
-src="images/photo-07.jpg"
+src="photo-07.jpg"
 alt="Domotique maison intelligente">
 
 </div>
@@ -1982,7 +1982,7 @@ Demander un devis
 <div class="service-image">
 
 <img
-src="images/photo-08.jpg"
+src="photo-08.jpg"
 alt="Panneaux solaires">
 
 </div>
@@ -2056,7 +2056,7 @@ Nos produits
 
 <p>
 Découvrez nos équipements et solutions technologiques.
-Cliquez sur « Acheter » pour passer votre commande.
+Ajoutez vos articles au panier et payez en ligne par Mobile Money (Moov Money, Togocel Money). Pour les autres produits, demandez un devis.
 </p>
 
 </div>
@@ -2072,7 +2072,7 @@ Cliquez sur « Acheter » pour passer votre commande.
 <div class="product-image">
 
 <img
-src="images/photo-09.jpg"
+src="photo-09.jpg"
 alt="Caméra de vidéosurveillance">
 
 </div>
@@ -2088,15 +2088,16 @@ Caméra de sécurité adaptée à la surveillance
 des maisons, commerces et entreprises.
 </p>
 
-<p style="color:var(--or);font-weight:bold;font-size:20px;margin-bottom:15px;">
-25 000 FCFA
+<p class="price" data-price-for="camera" style="color:var(--or);font-weight:bold;font-size:20px;margin-bottom:15px;">
+Prix…
 </p>
 
 <button
-id="pay-btn-camera"
-class="buy-button">
+class="buy-button add-cart"
+data-id="camera"
+disabled>
 
-💳 Payer maintenant
+🛒 Ajouter au panier
 
 </button>
 
@@ -2112,7 +2113,7 @@ class="buy-button">
 <div class="product-image">
 
 <img
-src="images/photo-08.jpg"
+src="photo-08.jpg"
 alt="Panneau solaire">
 
 </div>
@@ -2128,15 +2129,16 @@ Solution solaire destinée à l'alimentation
 électrique des installations et équipements.
 </p>
 
-<p style="color:var(--or);font-weight:bold;font-size:20px;margin-bottom:15px;">
-20 000 FCFA
+<p class="price" data-price-for="solaire" style="color:var(--or);font-weight:bold;font-size:20px;margin-bottom:15px;">
+Prix…
 </p>
 
 <button
-id="pay-btn-solaire"
-class="buy-button">
+class="buy-button add-cart"
+data-id="solaire"
+disabled>
 
-💳 Payer maintenant
+🛒 Ajouter au panier
 
 </button>
 
@@ -2152,7 +2154,7 @@ class="buy-button">
 <div class="product-image">
 
 <img
-src="images/photo-11.jpg"
+src="photo-11.jpg"
 alt="Équipement réseau informatique">
 
 </div>
@@ -2190,7 +2192,7 @@ target="_blank">
 <div class="product-image">
 
 <img
-src="images/photo-12.jpg"
+src="photo-12.jpg"
 alt="Système d'alarme">
 
 </div>
@@ -2228,7 +2230,7 @@ target="_blank">
 <div class="product-image">
 
 <img
-src="images/photo-13.jpg"
+src="photo-13.jpg"
 alt="Matériel électrique">
 
 </div>
@@ -2266,7 +2268,7 @@ target="_blank">
 <div class="product-image">
 
 <img
-src="images/photo-14.jpg"
+src="photo-14.jpg"
 alt="Matériel informatique">
 
 </div>
@@ -2304,7 +2306,7 @@ target="_blank">
 <div class="product-image">
 
 <img
-src="images/photo-15.jpg"
+src="photo-15.jpg"
 alt="Kit vidéosurveillance 8 caméras">
 
 </div>
@@ -2481,7 +2483,7 @@ dans lesquels nous intervenons.
 <div class="project">
 
 <div class="project-image">
-<img src="images/photo-04.jpg" alt="Vidéosurveillance">
+<img src="photo-04.jpg" alt="Vidéosurveillance">
 </div>
 
 <div class="project-content">
@@ -2503,7 +2505,7 @@ de systèmes de surveillance.
 <div class="project">
 
 <div class="project-image">
-<img src="images/photo-02.jpg" alt="Réseau informatique">
+<img src="photo-02.jpg" alt="Réseau informatique">
 </div>
 
 <div class="project-content">
@@ -2525,7 +2527,7 @@ configuration et organisation réseau.
 <div class="project">
 
 <div class="project-image">
-<img src="images/photo-03.jpg" alt="Système incendie">
+<img src="photo-03.jpg" alt="Système incendie">
 </div>
 
 <div class="project-content">
@@ -2547,7 +2549,7 @@ protection incendie.
 <div class="project">
 
 <div class="project-image">
-<img src="images/photo-12.jpg" alt="Système d'alarme">
+<img src="photo-12.jpg" alt="Système d'alarme">
 </div>
 
 <div class="project-content">
@@ -2569,7 +2571,7 @@ et détection d'intrusion.
 <div class="project">
 
 <div class="project-image">
-<img src="images/photo-05.jpg" alt="Électricité et électronique">
+<img src="photo-05.jpg" alt="Électricité et électronique">
 </div>
 
 <div class="project-content">
@@ -2591,7 +2593,7 @@ et dépannage.
 <div class="project">
 
 <div class="project-image">
-<img src="images/photo-06.jpg" alt="Création web">
+<img src="photo-06.jpg" alt="Création web">
 </div>
 
 <div class="project-content">
@@ -2632,71 +2634,8 @@ TÉMOIGNAGES
 </small>
 
 <h2>
-Ce que disent nos clients
+Votre avis compte
 </h2>
-
-</div>
-
-
-<div class="advantages">
-
-
-<div class="advantage">
-
-<div class="advantage-icon">
-⭐⭐⭐⭐⭐
-</div>
-
-<h3>
-Nom du client
-</h3>
-
-<p>
-« Ajoutez ici l'avis d'un client satisfait :
-qualité du travail, respect des délais,
-professionnalisme... »
-</p>
-
-</div>
-
-
-<div class="advantage">
-
-<div class="advantage-icon">
-⭐⭐⭐⭐⭐
-</div>
-
-<h3>
-Nom du client
-</h3>
-
-<p>
-« Ajoutez ici l'avis d'un deuxième client,
-par exemple sur une installation de
-vidéosurveillance ou de réseau. »
-</p>
-
-</div>
-
-
-<div class="advantage">
-
-<div class="advantage-icon">
-⭐⭐⭐⭐⭐
-</div>
-
-<h3>
-Nom du client
-</h3>
-
-<p>
-« Ajoutez ici l'avis d'un troisième client,
-par exemple sur une installation solaire
-ou un dépannage électrique. »
-</p>
-
-</div>
-
 
 </div>
 
@@ -3448,12 +3387,47 @@ Tous droits réservés.
 </footer>
 
 
+
+
 <!-- ================================================= -->
-<!-- FEDAPAY CHECKOUT -->
+<!-- PANIER -->
 <!-- ================================================= -->
 
-<script src="https://cdn.fedapay.com/checkout.js?v=1.1.7"></script>
+<button id="cartFab" onclick="openCart()" aria-label="Ouvrir le panier"
+style="position:fixed;left:22px;bottom:22px;z-index:2000;display:none;align-items:center;gap:8px;padding:14px 18px;border:none;border-radius:50px;background:var(--or);color:var(--noir);font-weight:bold;cursor:pointer;box-shadow:0 8px 25px rgba(0,0,0,.4);">
+🛒 Panier (<span id="cartCount">0</span>)
+</button>
 
+<div class="shop-modal" id="cartModal" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+<div class="shop-modal-content">
+<button class="shop-close" onclick="closeCart()" aria-label="Fermer">×</button>
+<h2 id="cartTitle">Mon panier</h2>
+<div id="cartLines"></div>
+<p id="cartTotal" class="selected-product"></p>
+
+<div id="cartForm">
+<input type="text" id="cName" placeholder="Votre nom" autocomplete="name">
+<input type="tel" id="cPhone" placeholder="Votre téléphone (ex. 90 12 34 56)" autocomplete="tel">
+<select id="cMode">
+<option value="retrait">Retrait en magasin (gratuit)</option>
+<option value="livraison">Livraison</option>
+</select>
+<input type="text" id="cAddress" placeholder="Adresse de livraison (quartier, repère)" style="display:none;" autocomplete="street-address">
+<p id="cartMsg" style="color:#ff7b6b;font-size:14px;min-height:18px;"></p>
+<button class="btn" id="cartPay" style="width:100%;" onclick="payCart()">💳 Payer par Mobile Money</button>
+<p style="font-size:12px;margin-top:10px;">Paiement sécurisé par SasPay. Des frais de service du réseau Mobile Money (environ 4 %) peuvent s'ajouter au moment du paiement.</p>
+</div>
+</div>
+</div>
+
+<div class="shop-modal" id="doneModal" role="dialog" aria-modal="true">
+<div class="shop-modal-content">
+<button class="shop-close" onclick="document.getElementById('doneModal').classList.remove('show')" aria-label="Fermer">×</button>
+<h2 id="doneTitle"></h2>
+<p id="doneText"></p>
+<a id="doneWa" class="btn btn-whatsapp" target="_blank" rel="noopener" style="display:none;margin-top:10px;">💬 Prévenir Moïse Tech &amp; Énergie</a>
+</div>
+</div>
 
 <!-- ================================================= -->
 <!-- JAVASCRIPT -->
@@ -3492,112 +3466,231 @@ document.querySelectorAll(".menu a").forEach(function(link) {
 
 
 /* ================================================= */
-/* PAIEMENT EN LIGNE - FEDAPAY */
+/* BOUTIQUE EN LIGNE — PANIER + PAIEMENT (SasPay)     */
 /* ================================================= */
 
 /*
-  ⚠️ IMPORTANT
-  Ceci est la clé PUBLIQUE de test (sandbox). Les paiements effectués
-  avec cette clé sont fictifs, aucun argent réel n'est débité.
-
-  Quand le compte FedaPay sera activé en mode "Live", il suffira de
-  remplacer cette valeur par la clé publique LIVE (elle commence par
-  "pk_live_...", disponible dans Tableau de bord > Api).
+  Les prix viennent du serveur (fichier api/_mte-catalog.js) : on ne peut
+  pas les modifier depuis le navigateur. Pour changer un prix ou ajouter
+  un produit payable en ligne, modifier ce fichier côté serveur.
 */
 
-const FEDAPAY_PUBLIC_KEY = "pk_sandbox_aqyEytA0sgn_2ILEL8pL7ftd";
+const SHOP_API = "https://mte-registre.vercel.app/api/mte-shop";
+const WA_NUMBER = "22871670258";
 
+let catalog = {};
+let deliveryFee = 0;
+let cart = {};
 
-function initFedaPayButton(buttonId, amount, description) {
-
-    const button = document.getElementById(buttonId);
-
-    if (!button) {
-        return;
-    }
-
-    /* Si le script FedaPay n'a pas pu se charger (pas de connexion,
-       bloqueur de scripts, etc.), on désactive juste ce bouton
-       au lieu de casser le reste du site. */
-
-    if (typeof FedaPay === "undefined") {
-
-        button.disabled = true;
-        button.textContent = "Paiement indisponible";
-        button.style.opacity = "0.6";
-        button.style.cursor = "not-allowed";
-
-        console.warn(
-            "FedaPay n'a pas pu se charger. Vérifiez la connexion internet."
-        );
-
-        return;
-
-    }
-
-    FedaPay.init("#" + buttonId, {
-
-        public_key: FEDAPAY_PUBLIC_KEY,
-
-        transaction: {
-            amount: amount,
-            description: description
-        },
-
-        currency: {
-            iso: "XOF"
-        },
-
-        onComplete: function(response) {
-
-            if (response.reason === FedaPay.CHECKOUT_COMPLETE) {
-
-                const txId =
-                    (response.transaction && response.transaction.id) ?
-                        response.transaction.id : "N/A";
-
-                alert(
-                    "Merci ! Votre paiement a bien été enregistré.\n\n" +
-                    "Référence transaction : " + txId + "\n\n" +
-                    "Nous vous contacterons rapidement pour la suite de votre commande."
-                );
-
-                /* Notification automatique par WhatsApp de la commande payée */
-
-                const waMessage =
-                    "Bonjour Moïse Tech & Énergie,%0A%0A" +
-                    "✅ PAIEMENT REÇU%0A%0A" +
-                    "Produit : " + encodeURIComponent(description) + "%0A" +
-                    "Montant : " + encodeURIComponent(amount + " FCFA") + "%0A" +
-                    "Référence : " + encodeURIComponent(txId);
-
-                window.open(
-                    "https://wa.me/22871670258?text=" + waMessage,
-                    "_blank"
-                );
-
-            }
-
-        }
-
-    });
-
+function fcfa(n) {
+    return Number(n).toLocaleString("fr-FR") + " FCFA";
 }
 
+function storeGet(key) {
+    try { return JSON.parse(localStorage.getItem(key)); } catch (e) { return null; }
+}
 
-/* Un bouton par produit à prix fixe */
+function storeSet(key, value) {
+    try {
+        if (value === null) { localStorage.removeItem(key); }
+        else { localStorage.setItem(key, JSON.stringify(value)); }
+    } catch (e) {}
+}
 
-initFedaPayButton(
-    "pay-btn-camera",
-    25000,
-    "Caméra de vidéosurveillance - Moïse Tech & Énergie"
-);
+async function shopCall(payload) {
+    const r = await fetch(SHOP_API, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+    });
+    let d = {};
+    try { d = await r.json(); } catch (e) {}
+    if (!r.ok) { throw new Error(d.error || "Erreur de connexion."); }
+    return d;
+}
 
-initFedaPayButton(
-    "pay-btn-solaire",
-    20000,
-    "Panneau solaire - Moïse Tech & Énergie"
-);
+function cartTotals() {
+    let total = 0;
+    let count = 0;
+    Object.keys(cart).forEach(function(id) {
+        if (catalog[id]) {
+            total += catalog[id].price * cart[id];
+            count += cart[id];
+        }
+    });
+    return { total: total, count: count };
+}
+
+function renderCart() {
+    const box = document.getElementById("cartLines");
+    box.textContent = "";
+    const t = cartTotals();
+
+    Object.keys(cart).forEach(function(id) {
+        const p = catalog[id];
+        if (!p) { return; }
+        const row = document.createElement("div");
+        row.style.cssText = "display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px;";
+        const label = document.createElement("span");
+        label.textContent = p.name + " — " + fcfa(p.price);
+        label.style.flex = "1";
+        const minus = document.createElement("button");
+        minus.type = "button";
+        minus.textContent = "−";
+        minus.setAttribute("aria-label", "Retirer un " + p.name);
+        const qty = document.createElement("strong");
+        qty.textContent = cart[id];
+        const plus = document.createElement("button");
+        plus.type = "button";
+        plus.textContent = "+";
+        plus.setAttribute("aria-label", "Ajouter un " + p.name);
+        [minus, plus].forEach(function(b) {
+            b.style.cssText = "width:34px;height:34px;border-radius:50%;border:1px solid #304050;background:#08111d;color:white;font-size:18px;cursor:pointer;";
+        });
+        minus.onclick = function() { changeQty(id, -1); };
+        plus.onclick = function() { changeQty(id, 1); };
+        row.append(label, minus, qty, plus);
+        box.appendChild(row);
+    });
+
+    const mode = document.getElementById("cMode").value;
+    const fee = mode === "livraison" ? deliveryFee : 0;
+    document.getElementById("cartTotal").textContent =
+        t.count ? "Total : " + fcfa(t.total + fee) + (fee ? " (livraison incluse)" : "") : "Votre panier est vide.";
+    document.getElementById("cartCount").textContent = t.count;
+    document.getElementById("cartFab").style.display = t.count ? "flex" : "none";
+    document.getElementById("cartForm").style.display = t.count ? "block" : "none";
+    storeSet("mte_cart", cart);
+}
+
+function changeQty(id, delta) {
+    const n = (cart[id] || 0) + delta;
+    if (n <= 0) { delete cart[id]; }
+    else { cart[id] = Math.min(n, 20); }
+    renderCart();
+}
+
+function addToCart(id) {
+    changeQty(id, 1);
+    openCart();
+}
+
+function openCart() {
+    document.getElementById("cartMsg").textContent = "";
+    renderCart();
+    document.getElementById("cartModal").classList.add("show");
+}
+
+function closeCart() {
+    document.getElementById("cartModal").classList.remove("show");
+}
+
+function showDone(title, text, waText) {
+    document.getElementById("doneTitle").textContent = title;
+    document.getElementById("doneText").textContent = text;
+    const wa = document.getElementById("doneWa");
+    if (waText) {
+        wa.href = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(waText);
+        wa.style.display = "inline-block";
+    } else {
+        wa.style.display = "none";
+    }
+    document.getElementById("doneModal").classList.add("show");
+}
+
+async function payCart() {
+    const msg = document.getElementById("cartMsg");
+    const btn = document.getElementById("cartPay");
+    msg.textContent = "";
+    const items = Object.keys(cart).map(function(id) { return { id: id, qty: cart[id] }; });
+    if (!items.length) { return; }
+    const customer = {
+        name: document.getElementById("cName").value.trim(),
+        phone: document.getElementById("cPhone").value.trim(),
+        mode: document.getElementById("cMode").value,
+        address: document.getElementById("cAddress").value.trim()
+    };
+    btn.disabled = true;
+    btn.textContent = "Création du paiement…";
+    try {
+        const d = await shopCall({ action: "order", items: items, customer: customer });
+        const lines = items.map(function(i) { return i.qty + " x " + catalog[i.id].name; }).join(", ");
+        storeSet("mte_pending", {
+            ref: d.ref,
+            total: d.total,
+            lines: lines,
+            name: customer.name,
+            phone: customer.phone,
+            mode: customer.mode,
+            address: customer.address
+        });
+        window.location.href = d.url;
+    } catch (e) {
+        msg.textContent = e.message;
+        btn.disabled = false;
+        btn.textContent = "💳 Payer par Mobile Money";
+    }
+}
+
+/* Au retour du paiement : on demande au serveur si c'est bien payé. */
+async function checkPendingOrder() {
+    const pend = storeGet("mte_pending");
+    if (!pend || !pend.ref) { return; }
+    let paid = false;
+    for (let i = 0; i < 6 && !paid; i++) {
+        try {
+            const d = await shopCall({ action: "status", ref: pend.ref });
+            paid = !!d.paid;
+        } catch (e) {}
+        if (!paid) { await new Promise(function(r) { setTimeout(r, 3000); }); }
+    }
+    if (paid) {
+        storeSet("mte_pending", null);
+        storeSet("mte_cart", null);
+        cart = {};
+        renderCart();
+        const wa = "Bonjour Moïse Tech & Énergie,\n\n✅ COMMANDE PAYÉE\n\n" +
+            "Articles : " + pend.lines + "\n" +
+            "Montant : " + fcfa(pend.total) + "\n" +
+            "Client : " + pend.name + " — " + pend.phone + "\n" +
+            (pend.mode === "livraison" ? "Livraison : " + pend.address : "Retrait en magasin") + "\n" +
+            "Référence : " + pend.ref.slice(0, 8);
+        showDone("Merci, paiement reçu !", "Votre commande est enregistrée. Touchez le bouton ci-dessous pour nous prévenir sur WhatsApp : nous vous contactons rapidement.", wa);
+    } else if (new URLSearchParams(location.search).has("pay") || document.referrer.indexOf("saspay") !== -1) {
+        showDone("Paiement non confirmé", "Nous n'avons pas encore reçu la confirmation. Si vous avez payé, patientez quelques minutes puis rechargez la page, ou écrivez-nous sur WhatsApp.", "Bonjour, j'ai un doute sur mon paiement (référence " + pend.ref.slice(0, 8) + ").");
+    }
+}
+
+async function initShop() {
+    cart = storeGet("mte_cart") || {};
+    document.querySelectorAll(".add-cart").forEach(function(b) {
+        b.addEventListener("click", function() { addToCart(this.getAttribute("data-id")); });
+    });
+    document.getElementById("cMode").addEventListener("change", function() {
+        document.getElementById("cAddress").style.display = this.value === "livraison" ? "block" : "none";
+        renderCart();
+    });
+    try {
+        const d = await shopCall({ action: "catalog" });
+        deliveryFee = d.deliveryFee || 0;
+        d.items.forEach(function(p) { catalog[p.id] = p; });
+        document.querySelectorAll("[data-price-for]").forEach(function(el) {
+            const p = catalog[el.getAttribute("data-price-for")];
+            el.textContent = p ? fcfa(p.price) : "Sur devis";
+        });
+        document.querySelectorAll(".add-cart").forEach(function(b) {
+            b.disabled = !catalog[b.getAttribute("data-id")];
+        });
+        Object.keys(cart).forEach(function(id) { if (!catalog[id]) { delete cart[id]; } });
+        renderCart();
+        checkPendingOrder();
+    } catch (e) {
+        document.querySelectorAll("[data-price-for]").forEach(function(el) { el.textContent = "Prix sur demande"; });
+        document.querySelectorAll(".add-cart").forEach(function(b) { b.textContent = "Paiement indisponible"; });
+    }
+}
+
+initShop();
 
 
 /* ================================================= */
