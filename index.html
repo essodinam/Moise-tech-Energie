@@ -3497,6 +3497,22 @@ function storeSet(key, value) {
     } catch (e) {}
 }
 
+var RECAPTCHA_SITE_KEY = "6LdfsS4uAAAAAH4edntog8au-BTGOoFrscOfbU1W";
+async function getCaptcha(action) {
+    try {
+        if (!window.grecaptcha) {
+            await new Promise(function(ok, ko) {
+                var sc = document.createElement("script");
+                sc.src = "https://www.google.com/recaptcha/api.js?render=" + RECAPTCHA_SITE_KEY;
+                sc.async = true; sc.onload = ok; sc.onerror = ko;
+                document.head.appendChild(sc);
+            });
+        }
+        await new Promise(function(ok) { window.grecaptcha.ready(ok); });
+        return await window.grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: action });
+    } catch (e) { return ""; }
+}
+
 async function shopCall(payload) {
     const r = await fetch(SHOP_API, {
         method: "POST",
@@ -3613,7 +3629,8 @@ async function payCart() {
     btn.disabled = true;
     btn.textContent = "Création du paiement…";
     try {
-        const d = await shopCall({ action: "order", items: items, customer: customer });
+        const captcha = await getCaptcha("order");
+        const d = await shopCall({ action: "order", captcha: captcha, items: items, customer: customer });
         const lines = items.map(function(i) { return i.qty + " x " + catalog[i.id].name; }).join(", ");
         storeSet("mte_pending", {
             ref: d.ref,
